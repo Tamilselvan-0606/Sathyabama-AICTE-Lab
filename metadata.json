@@ -1,0 +1,6 @@
+{
+  "name": "Aetheris Scientific Research Institute",
+  "description": "A world-class, premium scientific research institute website featuring cutting-edge theoretical physics, biotechnology, and advanced computation, inspired by CERN, NASA, and MIT.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
