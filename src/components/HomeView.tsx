@@ -35,7 +35,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       desc: 'Topological state manipulation, quantum computing architectures, and Josephson junctions.',
       icon: Atom,
       color: 'from-amber-500 to-rose-600',
-      stat: '19 Active Projects'
+      stat: '21 Active Projects'
     },
     {
       title: 'Biotechnology',
@@ -455,7 +455,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             <div className="lg:col-span-7 relative h-full">
               <div className="bg-white rounded-2xl p-8 lg:p-12 border border-slate-200 shadow-md h-full flex flex-col justify-center relative">
-                
+
                 <div className="flex justify-between items-start mb-12">
                   <div>
                     <span className="font-sans text-[11px] text-[#831238] tracking-widest font-bold uppercase bg-[#831238]/10 px-3 py-1.5 rounded-md">Data Network</span>
@@ -486,7 +486,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <span className="text-[#831238] font-bold">1.2 Gbps</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{width: 0}} animate={{width: '82%'}} transition={{duration: 1.5}} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
+                        <motion.div initial={{ width: 0 }} animate={{ width: '82%' }} transition={{ duration: 1.5 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
                       </div>
                     </div>
 
@@ -497,7 +497,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <span className="text-[#831238] font-bold">840 Mbps</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{width: 0}} animate={{width: '65%'}} transition={{duration: 1.5, delay: 0.2}} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
+                        <motion.div initial={{ width: 0 }} animate={{ width: '65%' }} transition={{ duration: 1.5, delay: 0.2 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
                       </div>
                     </div>
 
@@ -508,10 +508,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <span className="text-[#831238] font-bold">950 Mbps</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{width: 0}} animate={{width: '74%'}} transition={{duration: 1.5, delay: 0.4}} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
+                        <motion.div initial={{ width: 0 }} animate={{ width: '74%' }} transition={{ duration: 1.5, delay: 0.4 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
                       </div>
                     </div>
-                    
+
                     {/* Node 4 */}
                     <div className="space-y-2">
                       <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold">
@@ -519,7 +519,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <span className="text-[#831238] font-bold">420 Mbps</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{width: 0}} animate={{width: '45%'}} transition={{duration: 1.5, delay: 0.6}} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
+                        <motion.div initial={{ width: 0 }} animate={{ width: '45%' }} transition={{ duration: 1.5, delay: 0.6 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
                       </div>
                     </div>
                   </div>
