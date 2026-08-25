@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation, Navigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import logoImg from './assets/logo.png';
 import {
@@ -33,12 +34,19 @@ import ResourcesView from './components/ResourcesView';
 import ContactView from './components/ContactView';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<PageType>('home');
+  const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [footerEmail, setFooterEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [showPortalModal, setShowPortalModal] = useState(false);
+
+  // Scroll to top on every route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   // Scroll handler for back-to-top button
   useEffect(() => {
@@ -53,42 +61,39 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Navigation tab change scroll reset
-  const handleNavigate = (tab: PageType) => {
-    setActiveTab(tab);
-    setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'institute', label: 'Institute' },
-    { id: 'research', label: 'Research' },
-    { id: 'scientists', label: 'Scientists' },
-    { id: 'innovation', label: 'Innovation' },
-    { id: 'resources', label: 'Resources' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', path: '/', label: 'Home' },
+    { id: 'about', path: '/about', label: 'About' },
+    { id: 'research', path: '/research', label: 'Research' },
+    { id: 'scientists', path: '/scientists', label: 'Scientists' },
+    { id: 'innovation', path: '/innovation', label: 'Innovation' },
+    { id: 'resources', path: '/resources', label: 'Resources' },
+    { id: 'contact', path: '/contact', label: 'Contact' },
   ];
 
-  const renderActiveView = () => {
-    switch (activeTab) {
-      case 'home':
-        return <HomeView onNavigate={handleNavigate} />;
-      case 'institute':
-        return <InstituteView onNavigate={handleNavigate} />;
-      case 'research':
-        return <ResearchView onNavigate={handleNavigate} />;
-      case 'scientists':
-        return <ScientistsView onNavigate={handleNavigate} />;
-      case 'innovation':
-        return <InnovationView onNavigate={handleNavigate} />;
-      case 'resources':
-        return <ResourcesView onNavigate={handleNavigate} />;
-      case 'contact':
-        return <ContactView onNavigate={handleNavigate} />;
-      default:
-        return <HomeView onNavigate={handleNavigate} />;
+  // Navigation helper compatible with component callbacks
+  const handleNavigate = (tab: PageType | string) => {
+    setMobileMenuOpen(false);
+    if (tab === 'home' || tab === '/') {
+      navigate('/');
+    } else if (tab === 'institute' || tab === 'about') {
+      navigate('/about');
+    } else {
+      const cleanPath = tab.startsWith('/') ? tab : `/${tab}`;
+      navigate(cleanPath);
     }
+  };
+
+  // Determine active tab based on current pathname
+  const currentPath = location.pathname.toLowerCase();
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return currentPath === '/' || currentPath === '/home';
+    }
+    if (path === '/about') {
+      return currentPath === '/about' || currentPath === '/institute';
+    }
+    return currentPath === path || currentPath.startsWith(path + '/');
   };
 
   return (
@@ -99,30 +104,33 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
           {/* Logo & Brand Identity */}
-          <button
-            onClick={() => handleNavigate('home')}
+          <Link
+            to="/"
             className="flex items-center cursor-pointer select-none group text-left"
           >
             <div className="h-16 group-hover:scale-[1.02] transition-transform duration-300">
               <img src={logoImg} alt="ASRI Logo" className="h-full w-auto object-contain" />
             </div>
-          </button>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                id={`nav-${item.id}`}
-                onClick={() => handleNavigate(item.id as PageType)}
-                className={`px-4 py-2 text-[15px] font-sans font-semibold tracking-wide transition-all duration-200 ${activeTab === item.id
-                    ? 'bg-[#831238] text-white shadow-md rounded-lg'
-                    : 'text-gray-700 hover:text-[#831238] hover:bg-[#831238]/10 rounded-lg'
-                  }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const active = isActive(item.path);
+              return (
+                <Link
+                  key={item.id}
+                  id={`nav-${item.id}`}
+                  to={item.path}
+                  className={`px-4 py-2 text-[15px] font-sans font-semibold tracking-wide transition-all duration-200 ${active
+                      ? 'bg-[#831238] text-white shadow-md rounded-lg'
+                      : 'text-gray-700 hover:text-[#831238] hover:bg-[#831238]/10 rounded-lg'
+                    }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop Call to Action Portal Link */}
@@ -155,18 +163,22 @@ export default function App() {
               className="lg:hidden border-t border-gray-200 bg-white"
             >
               <div className="px-6 py-6 space-y-3 flex flex-col">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavigate(item.id as PageType)}
-                    className={`w-full text-left px-4 py-3 rounded-lg text-sm font-sans font-medium transition-all ${activeTab === item.id
-                        ? 'bg-[#831238] text-white shadow-md'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                      }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
+                {navItems.map((item) => {
+                  const active = isActive(item.path);
+                  return (
+                    <Link
+                      key={item.id}
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`w-full text-left px-4 py-3 rounded-lg text-sm font-sans font-medium transition-all ${active
+                          ? 'bg-[#831238] text-white shadow-md'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                        }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
                 <button
                   onClick={() => { setMobileMenuOpen(false); setShowPortalModal(true); }}
                   className="w-full text-center py-3 rounded-lg border border-gray-200 text-slate-700 hover:text-[#831238] hover:border-[#831238] text-sm font-sans font-medium flex items-center justify-center gap-2 transition-all mt-3"
@@ -179,17 +191,28 @@ export default function App() {
         </AnimatePresence>
       </header>
 
-      {/* CORE ACTIVE PAGE RENDER STAGE */}
+      {/* CORE ACTIVE PAGE RENDER STAGE (ROUTER) */}
       <main id="main-content" className="flex-grow">
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeTab}
+            key={location.pathname}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.3 }}
           >
-            {renderActiveView()}
+            <Routes location={location}>
+              <Route path="/" element={<HomeView onNavigate={handleNavigate} />} />
+              <Route path="/home" element={<Navigate to="/" replace />} />
+              <Route path="/about" element={<InstituteView onNavigate={handleNavigate} />} />
+              <Route path="/institute" element={<Navigate to="/about" replace />} />
+              <Route path="/research" element={<ResearchView onNavigate={handleNavigate} />} />
+              <Route path="/scientists" element={<ScientistsView onNavigate={handleNavigate} />} />
+              <Route path="/innovation" element={<InnovationView onNavigate={handleNavigate} />} />
+              <Route path="/resources" element={<ResourcesView onNavigate={handleNavigate} />} />
+              <Route path="/contact" element={<ContactView onNavigate={handleNavigate} />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
           </motion.div>
         </AnimatePresence>
       </main>
@@ -247,12 +270,12 @@ export default function App() {
                 {navItems.map((item) => (
                   <li key={item.id} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400/70" />
-                    <button 
-                      onClick={() => handleNavigate(item.id as PageType)}
+                    <Link 
+                      to={item.path}
                       className="hover:text-amber-300 transition-colors text-left"
                     >
                       {item.label}
-                    </button>
+                    </Link>
                   </li>
                 ))}
               </ul>
