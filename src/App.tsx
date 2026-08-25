@@ -26,7 +26,7 @@ import { PageType } from './types';
 
 // Importing views
 import HomeView from './components/HomeView';
-import InstituteView from './components/InstituteView';
+import AboutView from './components/AboutView';
 import ResearchView from './components/ResearchView';
 import ScientistsView from './components/ScientistsView';
 import InnovationView from './components/InnovationView';
@@ -63,7 +63,7 @@ export default function App() {
 
   const navItems = [
     { id: 'home', path: '/', label: 'Home' },
-    { id: 'about', path: '/about', label: 'About' },
+    { id: 'about', path: '/about', label: 'About Us' },
     { id: 'research', path: '/research', label: 'Research' },
     { id: 'scientists', path: '/scientists', label: 'Scientists' },
     { id: 'innovation', path: '/innovation', label: 'Innovation' },
@@ -76,7 +76,7 @@ export default function App() {
     setMobileMenuOpen(false);
     if (tab === 'home' || tab === '/') {
       navigate('/');
-    } else if (tab === 'institute' || tab === 'about') {
+    } else if (tab === 'institute' || tab === 'about' || tab === 'about-us') {
       navigate('/about');
     } else {
       const cleanPath = tab.startsWith('/') ? tab : `/${tab}`;
@@ -91,7 +91,7 @@ export default function App() {
       return currentPath === '/' || currentPath === '/home';
     }
     if (path === '/about') {
-      return currentPath === '/about' || currentPath === '/institute';
+      return currentPath === '/about' || currentPath === '/about-us' || currentPath === '/institute';
     }
     return currentPath === path || currentPath.startsWith(path + '/');
   };
@@ -204,7 +204,8 @@ export default function App() {
             <Routes location={location}>
               <Route path="/" element={<HomeView onNavigate={handleNavigate} />} />
               <Route path="/home" element={<Navigate to="/" replace />} />
-              <Route path="/about" element={<InstituteView onNavigate={handleNavigate} />} />
+              <Route path="/about" element={<AboutView onNavigate={handleNavigate} />} />
+              <Route path="/about-us" element={<Navigate to="/about" replace />} />
               <Route path="/institute" element={<Navigate to="/about" replace />} />
               <Route path="/research" element={<ResearchView onNavigate={handleNavigate} />} />
               <Route path="/scientists" element={<ScientistsView onNavigate={handleNavigate} />} />
