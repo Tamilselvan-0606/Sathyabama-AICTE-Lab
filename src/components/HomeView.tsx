@@ -3,13 +3,11 @@ import { motion } from 'motion/react';
 import {
   Atom,
   Dna,
+  Scissors,
   Cpu,
   Activity,
-  TrendingUp,
   Globe,
   ArrowRight,
-  Download,
-  BookOpen,
   MapPin,
   Beaker,
   Layers,
@@ -18,8 +16,12 @@ import {
   ChevronDown,
   Sparkles
 } from 'lucide-react';
-import { DISCOVERIES, PUBLICATIONS, LABORATORIES } from '../data';
-import heroImage from '../../assets/images/image.png';
+import heroImage from '../assets/Images/Home_image1.jpg';
+import collabImg1 from '../assets/Images/Collaborations_and_Outreach_image1.jpg';
+import collabImg2 from '../assets/Images/Collaborations_and_Outreach_image2.jpg';
+import collabImg3 from '../assets/Images/Collaborations_and_Outreach_image3.jpg';
+import collabImg4 from '../assets/Images/Collaborations_and_Outreach_image4.jpg';
+import collabImg5 from '../assets/Images/Collaborations_and_Outreach_image5.jpg';
 
 interface HomeViewProps {
   onNavigate: (tab: any) => void;
@@ -81,28 +83,27 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section id="hero-banner" className="relative min-h-screen flex items-stretch overflow-hidden bg-white text-slate-900 border-b border-gray-200">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-screen">
 
-          {/* Hero Left Column (6/12) */}
-          <div className="lg:col-span-6 flex flex-col justify-center p-8 md:p-16 lg:p-24 lg:pr-8 bg-white relative z-20">
+          {/* Hero Left Column (5/12) */}
+          <div className="lg:col-span-5 flex flex-col justify-center p-8 md:p-16 lg:py-20 lg:pl-24 lg:pr-6 bg-white relative z-20">
             <div className="absolute top-10 left-8 md:left-16 lg:left-24 text-[10px] tracking-wider text-gray-400 mb-4 font-sans font-semibold">
-              Theoretical Division // 2026 Framework
+              AICTE IDEA LAB // Sathyabama Institute
             </div>
 
             <div className="mt-8 mb-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 text-[10px] font-sans tracking-wide rounded-lg">
                 <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-                <span>ASRI • 25 Years of Discovery</span>
+                <span>Transforming Ideas into Reality</span>
               </div>
             </div>
 
             <h1 className="text-[30px] font-extrabold leading-tight text-[#831238] mb-8 tracking-tight">
-              Pushing the Limits of <br />
-              <span className="text-[#831238]">
-                Theoretical & Applied Science
+              Welcome to the
+              <span className="text-[#831238]"> AICTE IDEA LAB
               </span>
             </h1>
 
-            <p className="text-sm md:text-base text-slate-600 max-w-xl leading-relaxed mb-10 font-sans">
-              Where topological quantum computing, genomic engineering, and artificial memristive synaptic networks intersect. ASRI acts as a catalyst for human discovery, modeling physical laws and biology from subatomic strings to global ecosystems.
+            <p className="text-sm md:text-base text-slate-600 max-w-xl leading-relaxed mb-10 font-sans text-justify">
+              Step into a world of innovation where your creativity knows no bounds. Equipped with state-of-the-art machinery including CNC Milling, Router Machines, CO2 Laser Cutters, and advanced IoT equipment, our IDEA LAB is a dedicated space for students to explore, experiment, and build. Whether you are crafting physical prototypes or building smart IoT projects to shape the future, we provide the tools and mentorship to turn your ideas into impactful real-world solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -110,431 +111,300 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 onClick={() => onNavigate('research')}
                 className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer"
               >
-                Explore Research <ArrowRight className="w-4 h-4" />
+                Explore Our Facilities <ArrowRight className="w-4 h-4" />
               </button>
-              <button
-                onClick={() => onNavigate('institute')}
-                className="px-8 py-4 border border-gray-300 text-gray-900 text-sm font-sans font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors rounded-lg cursor-pointer"
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfwb7b8WzLR8hh3suyVD9DWKouidNcnxRBZ9yJ_9BHVt7m0lA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 border-2 border-[#831238] text-[#831238] text-sm font-sans font-medium hover:bg-[#831238]/5 hover:border-[#620a27] transition-colors rounded-lg cursor-pointer text-center"
               >
-                Institute Profile
-              </button>
+                Start a Project
+              </a>
             </div>
           </div>
 
-          {/* Image / Data Visual Column (6/12) */}
-          <div className="lg:col-span-6 flex items-center justify-center p-4 lg:py-20 lg:pr-20 lg:pl-0 min-h-[500px] lg:min-h-0 bg-white relative z-10">
-            <div className="relative w-full h-full lg:h-[90%] rounded-xl lg:-ml-20 lg:-translate-y-8 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-              <img src={heroImage} alt="Hero Research Visual" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+          {/* Image / Data Visual Column (7/12) */}
+          <div className="lg:col-span-7 flex items-center justify-center p-8 md:p-16 lg:py-20 lg:pr-24 lg:pl-6 bg-white relative z-10">
+            <div className="relative w-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-200">
+              <img
+                src={heroImage}
+                alt="AICTE IDEA LAB"
+                className="w-full h-auto object-contain block"
+              />
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 2: ABOUT THE INSTITUTE */}
-      <section id="about-section" className="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      {/* SECTION 2: EMPOWERING STUDENT INNOVATORS */}
+      <section id="about-section" className="py-24 px-8 md:px-16 lg:px-24 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-7 space-y-8">
-          <div className="inline-block px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 font-sans text-xs font-semibold rounded-lg tracking-wide">
-            Established 2001
-          </div>
           <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
-            A Sanctuary for High-Stakes Intellectual and Physical Inquiry
+            Empowering Student Innovators
           </h2>
           <div className="space-y-6 text-slate-600 font-sans leading-relaxed text-base">
-            <p className="font-medium text-slate-800 text-lg">
-              The Aetheris Scientific Research Institute (ASRI) stands as a beacon of uncompromising scientific rigorousness, designed on the models of CERN and MIT. We convene global minds to investigate high-risk, high-reward theoretical and experimental fields that define the trajectory of our civilization.
-            </p>
-            <p>
-              By aligning physical theorists, genomic chemists, and neuro-engineers within a unified, state-of-the-art campus, we bypass the silos of traditional departments. Our core philosophy is anchored on "first principles" research—stripping scientific query back to its fundamental axioms and building groundbreaking applications upon absolute truths.
-            </p>
-            <p>
-              Operating with durable funding guarantees and specialized laboratory platforms, ASRI protects the intellectual autonomy of our principal investigators, enabling continuous exploration with global impact.
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed text-justify">
+              We believe in learning by doing. The AICTE IDEA Lab encourages students from all engineering disciplines to step away from the textbooks and get their hands dirty. Whether you are interested in additive manufacturing, robotics, embedded systems, or designing IoT projects that can shape the world, this is your playground for experiential learning.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-6 pt-4 border-t border-slate-200">
-            <div>
-              <div className="font-serif text-[30px] font-bold italic text-red-700">450+</div>
-              <div className="font-sans text-xs text-slate-500 mt-1">Peer Journals</div>
-            </div>
-            <div>
-              <div className="font-serif text-[30px] font-bold italic text-red-700">60+</div>
-              <div className="font-sans text-xs text-slate-500 mt-1">Global Patents</div>
-            </div>
-            <div>
-              <div className="font-serif text-[30px] font-bold italic text-red-700">$45M</div>
-              <div className="font-sans text-xs text-slate-500 mt-1">Annual Grants</div>
-            </div>
+          <div>
+            <button
+              onClick={() => onNavigate('research')}
+              className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer"
+            >
+              View Student Projects <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
         <div className="lg:col-span-5 relative">
           <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-xl">
             <img
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
-              alt="ASRI Modern Advanced Laboratory"
+              alt="AICTE IDEA Lab - Student Innovation"
               className="w-full h-[500px] object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent text-white">
-              <span className="font-sans text-xs text-amber-400 font-semibold">Plate 09 — ARNA Division</span>
-              <p className="font-serif italic text-lg mt-1">Bionics & Robotic Synchronization Array</p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: OUR RESEARCH EXCELLENCE */}
-      <section id="excellence-section" className="py-24 bg-[#831238] border-y border-red-950 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="font-sans text-xs tracking-wider text-amber-300 font-bold bg-white/10 px-3.5 py-1.5 rounded-lg backdrop-blur-sm">Research Divisions</span>
-            <h2 className="font-serif text-[30px] font-extrabold italic text-white leading-tight">
-              Domains of Pure and Applied Inquiry
-            </h2>
-            <p className="text-white/80 font-sans text-base">
-              ASRI operates across six key tactical fields, structured to transition theoretical mathematics and physics into biological and chemical engineering solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-            {researchCategories.map((cat, idx) => {
-              const IconComp = cat.icon;
-              return (
-                <div key={idx} className="flex items-start gap-5 group cursor-pointer" onClick={() => onNavigate('research')}>
-                  <div className="shrink-0 mt-1">
-                    <div className="p-3 rounded-full bg-white/5 border border-white/10 text-amber-300 group-hover:bg-amber-300 group-hover:text-[#831238] group-hover:border-amber-300 transition-all duration-300">
-                      <IconComp className="w-5 h-5" />
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="font-serif text-lg font-bold text-white group-hover:text-amber-300 transition-colors duration-300">
-                      {cat.title}
-                    </h3>
-                    <p className="text-white/70 text-sm font-sans leading-relaxed">
-                      {cat.desc}
-                    </p>
-                    <div className="pt-2 flex items-center justify-between">
-                      <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">{cat.stat}</span>
-                      <span className="text-xs font-sans font-bold text-amber-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0">
-                        Explore <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: FEATURED LABORATORIES */}
-      <section id="labs-section" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-          <div className="space-y-4">
-            <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">State-of-the-Art Facilities</span>
-            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight">
-              Featured Core Research Labs
-            </h2>
-          </div>
-          <button
-            id="view-all-labs-btn"
-            onClick={() => onNavigate('research')}
-            className="px-5 py-2.5 border border-gray-300 rounded-lg hover:border-[#831238] text-slate-700 hover:text-[#831238] transition-all font-sans font-medium text-xs flex items-center gap-2 cursor-pointer"
-          >
-            All Core Laboratories <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {LABORATORIES.map((lab) => (
-            <div
-              key={lab.id}
-              className="bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 group shadow-md flex flex-col h-full transition-all duration-300 relative hover:-translate-y-1"
-            >
-
-              <div className="w-full relative overflow-hidden h-56 shrink-0">
-                <img
-                  src={lab.image}
-                  alt={lab.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <span className="font-sans text-[9px] tracking-wide bg-red-900/80 px-2.5 py-1 rounded-md font-semibold">Core Platform</span>
-                </div>
-              </div>
-              <div className="w-full p-6 flex flex-col flex-grow justify-between space-y-6 relative z-10">
-                <div>
-                  <h3 className="font-serif text-base font-bold italic text-slate-900 leading-snug group-hover:text-red-700 transition-colors">
-                    {lab.name}
-                  </h3>
-                  <div className="font-sans text-xs text-slate-500 mt-1 mb-4">Lead: {lab.head}</div>
-                  <p className="text-slate-700 text-sm font-sans font-medium line-clamp-3 leading-relaxed">
-                    {lab.description}
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100">
-                  <div className="text-xs font-sans font-semibold text-slate-800 mb-2 tracking-wide">Key Instrumentation:</div>
-                  <ul className="text-slate-700 text-[11px] font-mono font-medium space-y-1">
-                    {lab.equipment.slice(0, 2).map((eq, i) => (
-                      <li key={i} className="truncate">• {eq}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* SECTION 5: SCIENTIFIC DISCOVERIES TIMELINE */}
-      <section id="discoveries-section" className="py-24 bg-[#831238] text-white px-6 overflow-hidden relative border-y border-red-950">
-        <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <span className="font-mono text-[10px] tracking-[0.25em] text-amber-300 uppercase font-bold bg-white/10 px-3.5 py-1.5 rounded-none">Milestones & Breakthroughs</span>
+      {/* SECTION 3: BRING YOUR PROJECTS TO LIFE (dark bg) */}
+      <section id="excellence-section" className="py-24 bg-[#831238] border-y border-red-950 px-8 md:px-16 lg:px-24 w-full">
+        <div className="w-full">
+          <div className="max-w-3xl mb-16 space-y-4">
             <h2 className="font-serif text-[30px] font-extrabold italic text-white tracking-tight">
-              Timeline of Scientific Discoveries
+              Bring Your Projects to Life
             </h2>
-            <p className="text-white/80 font-sans text-base">
-              Through consistent investment in fundamental science, ASRI scientists have achieved several historical firsts.
+            <p className="text-sm md:text-base text-white/80 leading-relaxed font-sans text-justify">
+              Our lab is equipped with cutting-edge industrial-grade machinery to handle both subtractive and additive manufacturing. From intricate designs to robust physical prototypes, students have full access to:
             </p>
           </div>
 
-          <div className="relative border-l border-white/20 md:ml-32 pl-8 md:pl-16 space-y-16">
-            {DISCOVERIES.map((disc, idx) => (
-              <div key={idx} className="relative group">
-                {/* Year Badge floating to the left on desktop */}
-                <div className="absolute -left-[53px] md:-left-[160px] top-1 md:w-28 text-left font-serif text-2xl md:text-3xl italic font-extrabold text-amber-300 flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white group-hover:scale-125 transition-transform shrink-0" />
-                  <span className="hidden md:inline">{disc.year}</span>
-                </div>
-
-                <div className="bg-slate-950/70 border border-white/10 backdrop-blur-md p-8 rounded-2xl hover:border-white/30 transition-all duration-300">
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                    <div>
-                      <span className="font-sans text-[9px] text-amber-500 tracking-wide font-bold bg-slate-900 border border-slate-850 px-2.5 py-1 rounded-md">
-                        {disc.category}
-                      </span>
-                      <h3 className="font-serif text-lg md:text-xl font-bold italic text-white mt-3">
-                        {disc.title}
-                      </h3>
-                    </div>
-                    <div className="text-left md:text-right">
-                      <div className="font-serif text-2xl italic text-red-400">{disc.stats}</div>
-                      <div className="font-sans text-[10px] text-slate-500 tracking-wider">Experimental Fidelity</div>
-                    </div>
-                  </div>
-                  <p className="text-slate-300 font-sans leading-relaxed text-sm mb-6">
-                    {disc.description}
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-slate-800 text-xs">
-                    <div>
-                      <span className="text-slate-500 font-sans text-[11px] tracking-wide font-semibold">Primary Investigator</span>
-                      <p className="text-slate-300 font-serif italic font-medium mt-1">{disc.investigator}</p>
-                    </div>
-                    <div>
-                      <span className="text-slate-500 font-sans text-[11px] tracking-wide font-semibold">Civilizational Impact</span>
-                      <p className="text-slate-300 font-sans font-medium mt-1">{disc.impact}</p>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {/* CNC Milling & Router Machines */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-2 hover:border-amber-300/40 group flex flex-col h-full transition-all duration-300 hover:-translate-y-1 p-6">
+              <div className="p-3 rounded-full bg-white/5 border border-white/10 text-amber-300 w-fit mb-5 group-hover:bg-amber-300 group-hover:text-[#831238] group-hover:border-amber-300 transition-all duration-300">
+                <Scissors className="w-6 h-6" />
               </div>
-            ))}
+              <h3 className="font-serif text-base font-bold italic text-white leading-snug mb-3 group-hover:text-amber-300 transition-colors">
+                CNC Milling &amp; Router Machines
+              </h3>
+              <p className="text-sm text-white/70 font-sans leading-relaxed">
+                For high-precision automated carving and component manufacturing.
+              </p>
+            </div>
+
+            {/* CO2 Laser Cutting Machines */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-2 hover:border-amber-300/40 group flex flex-col h-full transition-all duration-300 hover:-translate-y-1 p-6">
+              <div className="p-3 rounded-full bg-white/5 border border-white/10 text-amber-300 w-fit mb-5 group-hover:bg-amber-300 group-hover:text-[#831238] group-hover:border-amber-300 transition-all duration-300">
+                <Beaker className="w-6 h-6" />
+              </div>
+              <h3 className="font-serif text-base font-bold italic text-white leading-snug mb-3 group-hover:text-amber-300 transition-colors">
+                CO2 Laser Cutting Machines
+              </h3>
+              <p className="text-sm text-white/70 font-sans leading-relaxed">
+                For precise subtractive manufacturing across diverse non-metallic substrates.
+              </p>
+            </div>
+
+            {/* Advanced 3D Printers */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-2 hover:border-amber-300/40 group flex flex-col h-full transition-all duration-300 hover:-translate-y-1 p-6">
+              <div className="p-3 rounded-full bg-white/5 border border-white/10 text-amber-300 w-fit mb-5 group-hover:bg-amber-300 group-hover:text-[#831238] group-hover:border-amber-300 transition-all duration-300">
+                <Layers className="w-6 h-6" />
+              </div>
+              <h3 className="font-serif text-base font-bold italic text-white leading-snug mb-3 group-hover:text-amber-300 transition-colors">
+                Advanced 3D Printers
+              </h3>
+              <p className="text-sm text-white/70 font-sans leading-relaxed">
+                Including Stratasys F370 and MakerBot systems for rapid prototyping.
+              </p>
+            </div>
+
+            {/* IoT & Electronics Equipment */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-2 hover:border-amber-300/40 group flex flex-col h-full transition-all duration-300 hover:-translate-y-1 p-6">
+              <div className="p-3 rounded-full bg-white/5 border border-white/10 text-amber-300 w-fit mb-5 group-hover:bg-amber-300 group-hover:text-[#831238] group-hover:border-amber-300 transition-all duration-300">
+                <Activity className="w-6 h-6" />
+              </div>
+              <h3 className="font-serif text-base font-bold italic text-white leading-snug mb-3 group-hover:text-amber-300 transition-colors">
+                IoT &amp; Electronics Equipment
+              </h3>
+              <p className="text-sm text-white/70 font-sans leading-relaxed">
+                Everything you need to build smart, connected devices.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 6: PUBLICATIONS & JOURNALS */}
-      <section id="publications-section" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">Intellectual Contributions</span>
-          <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight">
-            Latest Publications & Journals
+      {/* SECTION 4: FROM IDEATION TO INCUBATION */}
+      <section id="labs-section" className="py-24 px-8 md:px-16 lg:px-24 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="lg:col-span-7 space-y-8">
+          <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
+            From Ideation to Incubation
           </h2>
-          <p className="text-slate-600 font-sans text-base">
-            Our researchers continuously present results in peer-reviewed journals of high repute. Explore our open archive papers.
+          <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans text-justify">
+            Have an idea for a smart agriculture system, an automated healthcare monitor, or a next-generation robotic arm? Bring it here! We actively encourage students to utilize our machineries and IoT equipment to make their own projects. Build solutions that address real-world societal and industrial challenges, and take your first step toward entrepreneurship and technology commercialization.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {PUBLICATIONS.map((pub, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row relative group overflow-hidden"
+          <div>
+            <button
+              onClick={() => onNavigate('research')}
+              className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer"
             >
-              {/* Image Side */}
-              <div className="sm:w-2/5 relative overflow-hidden h-48 sm:h-auto shrink-0 border-b sm:border-b-0 sm:border-r border-slate-100">
-                {pub.image ? (
-                  <img src={pub.image} alt={pub.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                ) : (
-                  <div className="w-full h-full bg-slate-50" />
-                )}
-                {/* Citations Overlay */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded-md shadow-sm border border-slate-100">
-                  <div className="flex items-center gap-1.5 text-red-800 font-sans text-[10px] font-bold uppercase tracking-widest">
-                    <TrendingUp className="w-3 h-3" />
-                    {pub.citations} Citations
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Side */}
-              <div className="sm:w-3/5 p-6 flex flex-col justify-between bg-white">
-                <div className="space-y-3">
-                  <span className="font-mono text-[10px] text-slate-500 font-semibold uppercase tracking-wider">{pub.journal} • {pub.year}</span>
-                  <h3 className="font-serif text-[15px] font-bold italic text-slate-900 leading-snug group-hover:text-[#831238] transition-colors">
-                    {pub.title}
-                  </h3>
-                  <p className="font-mono text-[11px] text-slate-700 font-semibold italic line-clamp-1">Authors: {pub.authors}</p>
-                  <p className="text-slate-600 text-[13px] font-sans font-medium line-clamp-3 leading-relaxed">
-                    {pub.abstract}
-                  </p>
-                </div>
-
-                <div className="pt-5 mt-5 border-t border-slate-100 flex justify-between items-center text-xs w-full">
-                  <span className="font-mono text-[10px] text-slate-400">DOI: {pub.doi}</span>
-                  <button
-                    onClick={() => onNavigate('resources')}
-                    className="text-[#831238] hover:text-red-950 font-sans font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
-                  >
-                    <BookOpen className="w-3.5 h-3.5" /> Full Abstract
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+              Join the Innovation Hub <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
-
-        <div className="text-center">
-          <button
-            id="view-archive-btn"
-            onClick={() => onNavigate('resources')}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#831238] hover:bg-[#831238]/90 text-white rounded-lg transition-all font-sans font-semibold text-xs cursor-pointer"
-          >
-            Access ASRI Open-Access Archive <Download className="w-4 h-4" />
-          </button>
+        <div className="lg:col-span-5 relative">
+          <div className="relative rounded-xl overflow-hidden border border-slate-200 shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800"
+              alt="Student Innovation and Prototyping"
+              className="w-full h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
         </div>
       </section>
 
-      {/* SECTION 7: GLOBAL COLLABORATIONS MAP */}
-      <section id="collab-section" className="py-24 bg-[#F4F4F2] border-t border-slate-200 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5 space-y-6">
-              <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">Global Scientific Grid</span>
-              <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-tight">
-                Our Global Research Partners
-              </h2>
-              <p className="text-slate-600 font-sans leading-relaxed text-base">
-                Scientific discovery requires absolute synergy. ASRI operates in active partnership with 40+ leading aerospace, biotechnology, and physical institutions worldwide, exchanging researchers, hosting summits, and operating shared data nodes.
-              </p>
-              <div className="space-y-4 pt-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-red-700 shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-serif italic font-bold text-slate-900 text-sm">CERN — Geneva, Switzerland</h4>
-                    <p className="text-sm text-slate-500 font-sans">High Energy Physics and Antimatter Co-simulations.</p>
+
+
+
+
+      {/* SECTION 7: ALWAYS OPEN FOR INNOVATION */}
+      <section id="collab-section" className="py-24 bg-[#F4F4F2] border-t border-slate-200 px-8 md:px-16 lg:px-24 w-full">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-7 space-y-8">
+            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
+              Always Open for Innovation
+            </h2>
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans text-justify">
+              Innovation doesn't run on a strict schedule. The AICTE IDEA Lab is open for students and faculty every day from 9:00 AM to 11:00 PM. During special events, hackathons, and intensive project development phases, the lab remains accessible 24/7 so you never have to stop building.
+            </p>
+            <div>
+              <a
+                href="https://forms.gle/s3cdYrmkUzViWVBp6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg inline-flex items-center justify-center gap-2 cursor-pointer"
+              >
+                Book Your Equipments <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="w-full max-w-md bg-gradient-to-br from-[#831238] via-[#700d2e] to-[#550821] rounded-2xl p-6 sm:p-7 shadow-xl border border-white/15 backdrop-blur-md overflow-hidden relative">
+              {/* Subtle decorative glow */}
+              <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
+
+              {/* Header */}
+              <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/10 relative z-10">
+                <span className="font-sans text-[10px] tracking-wider font-bold uppercase text-amber-300 bg-white/10 border border-white/10 px-2.5 py-1 rounded-md">
+                  Lab Schedule
+                </span>
+                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-[10px] font-sans font-medium text-emerald-300">Live</span>
+                </div>
+              </div>
+
+              <div className="space-y-3.5 relative z-10">
+                {/* Daily Hours */}
+                <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
+                  <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
+                    <Globe className="w-4 h-4" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-sans text-[11px] text-white/50 uppercase tracking-wider font-medium">Daily Hours</p>
+                    <p className="font-sans font-bold text-white text-sm sm:text-base tracking-tight">9:00 AM – 11:00 PM</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-red-700 shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-serif italic font-bold text-slate-900 text-sm">NASA Jet Propulsion Laboratory — California, USA</h4>
-                    <p className="text-sm text-slate-500 font-sans">Autonomous spacecraft mapping pipelines and swarm validation.</p>
+
+                {/* Hackathons */}
+                <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
+                  <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+                    <div>
+                      <p className="font-sans text-[11px] text-white/50 uppercase tracking-wider font-medium">Hackathons &amp; Events</p>
+                      <p className="font-sans font-bold text-white text-sm sm:text-base tracking-tight">24 / 7 Access</p>
+                    </div>
+                    <span className="text-[9px] font-sans font-bold uppercase tracking-wider bg-amber-400/20 border border-amber-400/30 text-amber-300 px-2 py-0.5 rounded-full shrink-0">
+                      Always On
+                    </span>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-red-700 shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-serif italic font-bold text-slate-900 text-sm">MIT Research Laboratories — Massachusetts, USA</h4>
-                    <p className="text-sm text-slate-500 font-sans">Advanced nanometer lithography and topological semiconductors.</p>
+
+                {/* Open To */}
+                <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
+                  <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
+                    <Users className="w-4 h-4" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-sans text-[11px] text-white/50 uppercase tracking-wider font-medium">Open To</p>
+                    <p className="font-sans font-bold text-white text-sm sm:text-base tracking-tight">All Students &amp; Faculty</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="lg:col-span-7 relative h-full">
-              <div className="bg-white rounded-2xl p-8 lg:p-12 border border-slate-200 shadow-md h-full flex flex-col justify-center relative">
+      {/* SECTION 8: COLLABORATIONS AND OUTREACH */}
+      <section id="tbi-initiatives-section" className="py-20 bg-white border-t border-slate-200 px-8 md:px-16 lg:px-24 w-full overflow-hidden">
+        <div className="w-full">
+          {/* Header */}
+          <div className="mb-10">
+            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
+              Collaborations and Outreach
+            </h2>
+          </div>
 
-                <div className="flex justify-between items-start mb-12">
-                  <div>
-                    <span className="font-sans text-[11px] text-[#831238] tracking-widest font-bold uppercase bg-[#831238]/10 px-3 py-1.5 rounded-md">Data Network</span>
-                    <h4 className="font-serif italic font-extrabold text-slate-900 text-2xl mt-3">Global Output Capacity</h4>
-                  </div>
-                  <span className="flex h-3 w-3 relative mt-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]"></span>
-                  </span>
+          {/* Auto-scroll Marquee Container */}
+          <div className="relative w-full overflow-hidden">
+            {/* Left & Right subtle gradient fade for smooth edge appearance */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />
+
+            {/* Marquee Track (Repeated for seamless continuous infinite loop) */}
+            <div className="animate-marquee flex gap-6 items-center py-2">
+              {[
+                { img: collabImg1, alt: 'Startup Voyage' },
+                { img: collabImg2, alt: 'Startup Anchor' },
+                { img: collabImg3, alt: 'Proto Cafe' },
+                { img: collabImg4, alt: 'Mentor Cafe' },
+                { img: collabImg5, alt: 'N-E-S-T Sathyabama TBI' },
+                { img: collabImg1, alt: 'Startup Voyage' },
+                { img: collabImg2, alt: 'Startup Anchor' },
+                { img: collabImg3, alt: 'Proto Cafe' },
+                { img: collabImg4, alt: 'Mentor Cafe' },
+                { img: collabImg5, alt: 'N-E-S-T Sathyabama TBI' },
+                { img: collabImg1, alt: 'Startup Voyage' },
+                { img: collabImg2, alt: 'Startup Anchor' },
+                { img: collabImg3, alt: 'Proto Cafe' },
+                { img: collabImg4, alt: 'Mentor Cafe' },
+                { img: collabImg5, alt: 'N-E-S-T Sathyabama TBI' },
+                { img: collabImg1, alt: 'Startup Voyage' },
+                { img: collabImg2, alt: 'Startup Anchor' },
+                { img: collabImg3, alt: 'Proto Cafe' },
+                { img: collabImg4, alt: 'Mentor Cafe' },
+                { img: collabImg5, alt: 'N-E-S-T Sathyabama TBI' },
+              ].map((card, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-[6px] border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 w-[240px] h-[115px] p-4 flex items-center justify-center shrink-0 group cursor-pointer select-none"
+                >
+                  <img
+                    src={card.img}
+                    alt={card.alt}
+                    className="max-h-full max-w-full object-contain block group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-
-                {/* Chart Area */}
-                <div className="space-y-8 relative">
-                  {/* Grid Lines behind bars */}
-                  <div className="absolute inset-y-0 left-0 right-0 flex justify-between pointer-events-none opacity-20">
-                    <div className="w-px h-full bg-slate-400"></div>
-                    <div className="w-px h-full bg-slate-400"></div>
-                    <div className="w-px h-full bg-slate-400"></div>
-                    <div className="w-px h-full bg-slate-400"></div>
-                    <div className="w-px h-full bg-slate-400"></div>
-                  </div>
-
-                  <div className="relative z-10 space-y-8">
-                    {/* Node 1 */}
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold">
-                        <span>NODE ALPHA (Geneva)</span>
-                        <span className="text-[#831238] font-bold">1.2 Gbps</span>
-                      </div>
-                      <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{ width: 0 }} animate={{ width: '82%' }} transition={{ duration: 1.5 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
-                      </div>
-                    </div>
-
-                    {/* Node 2 */}
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold">
-                        <span>NODE BETA (Pasadena)</span>
-                        <span className="text-[#831238] font-bold">840 Mbps</span>
-                      </div>
-                      <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{ width: 0 }} animate={{ width: '65%' }} transition={{ duration: 1.5, delay: 0.2 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
-                      </div>
-                    </div>
-
-                    {/* Node 3 */}
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold">
-                        <span>NODE GAMMA (Tokyo)</span>
-                        <span className="text-[#831238] font-bold">950 Mbps</span>
-                      </div>
-                      <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{ width: 0 }} animate={{ width: '74%' }} transition={{ duration: 1.5, delay: 0.4 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
-                      </div>
-                    </div>
-
-                    {/* Node 4 */}
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold">
-                        <span>NODE DELTA (London)</span>
-                        <span className="text-[#831238] font-bold">420 Mbps</span>
-                      </div>
-                      <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <motion.div initial={{ width: 0 }} animate={{ width: '45%' }} transition={{ duration: 1.5, delay: 0.6 }} className="bg-gradient-to-r from-[#831238] to-[#B01A4C] h-full rounded-full relative" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Chart X-Axis Labels */}
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono mt-4 border-t border-slate-100 pt-3">
-                  <span>0</span>
-                  <span>250</span>
-                  <span>500</span>
-                  <span>750</span>
-                  <span>1000+</span>
-                </div>
-
-              </div>
+              ))}
             </div>
           </div>
         </div>

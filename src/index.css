@@ -34,6 +34,7 @@ i,
 
 .brand-gradient-text {
   background: none !important;
+  background-clip: unset !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
   color: #831238 !important;
@@ -77,4 +78,24 @@ div[class*="bg-white"][class*="rounded-xl"][class*="border-slate-200"]:hover,
 div[class*="bg-slate-50"][class*="rounded-2xl"][class*="border-slate-200"]:hover {
   border-color: #831238 !important;
   outline: 3px solid #831238 !important;
+}
+
+/* Auto-scroll Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
