@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation, Navigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import logoImg from './assets/logo.png';
+const logoImg = '/Images/Home/logo.png';
 import {
   Atom,
   Menu,
@@ -29,7 +29,7 @@ import HomeView from './components/HomeView';
 import AboutView from './components/AboutView';
 import ResearchView from './components/ResearchView';
 import ScientistsView from './components/ScientistsView';
-import InnovationView from './components/InnovationView';
+import FacilitiesView from './components/FacilitiesView';
 import ResourcesView from './components/ResourcesView';
 import ContactView from './components/ContactView';
 
@@ -64,9 +64,9 @@ export default function App() {
   const navItems = [
     { id: 'home', path: '/', label: 'Home' },
     { id: 'about', path: '/about', label: 'About Us' },
+    { id: 'facilities', path: '/facilities', label: 'Facilities' },
     { id: 'research', path: '/research', label: 'Research' },
     { id: 'scientists', path: '/scientists', label: 'Scientists' },
-    { id: 'innovation', path: '/innovation', label: 'Innovation' },
     { id: 'resources', path: '/resources', label: 'Resources' },
     { id: 'contact', path: '/contact', label: 'Contact' },
   ];
@@ -78,6 +78,8 @@ export default function App() {
       navigate('/');
     } else if (tab === 'institute' || tab === 'about' || tab === 'about-us') {
       navigate('/about');
+    } else if (tab === 'facilities' || tab === 'innovation') {
+      navigate('/facilities');
     } else {
       const cleanPath = tab.startsWith('/') ? tab : `/${tab}`;
       navigate(cleanPath);
@@ -92,6 +94,9 @@ export default function App() {
     }
     if (path === '/about') {
       return currentPath === '/about' || currentPath === '/about-us' || currentPath === '/institute';
+    }
+    if (path === '/facilities') {
+      return currentPath === '/facilities' || currentPath === '/innovation';
     }
     return currentPath === path || currentPath.startsWith(path + '/');
   };
@@ -209,7 +214,8 @@ export default function App() {
               <Route path="/institute" element={<Navigate to="/about" replace />} />
               <Route path="/research" element={<ResearchView onNavigate={handleNavigate} />} />
               <Route path="/scientists" element={<ScientistsView onNavigate={handleNavigate} />} />
-              <Route path="/innovation" element={<InnovationView onNavigate={handleNavigate} />} />
+              <Route path="/facilities" element={<FacilitiesView onNavigate={handleNavigate} />} />
+              <Route path="/innovation" element={<Navigate to="/facilities" replace />} />
               <Route path="/resources" element={<ResourcesView onNavigate={handleNavigate} />} />
               <Route path="/contact" element={<ContactView onNavigate={handleNavigate} />} />
               <Route path="*" element={<Navigate to="/" replace />} />

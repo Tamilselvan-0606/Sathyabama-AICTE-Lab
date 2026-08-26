@@ -1,4 +1,4 @@
-export type PageType = 'home' | 'about' | 'about-us' | 'research' | 'scientists' | 'innovation' | 'resources' | 'contact';
+export type PageType = 'home' | 'about' | 'about-us' | 'research' | 'scientists' | 'facilities' | 'innovation' | 'resources' | 'contact';
 
 export interface Discovery {
   year: string;

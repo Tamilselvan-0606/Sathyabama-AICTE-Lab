@@ -16,12 +16,12 @@ import {
   ChevronDown,
   Sparkles
 } from 'lucide-react';
-import heroImage from '../assets/Images/Home_image1.jpg';
-import collabImg1 from '../assets/Images/Collaborations_and_Outreach_image1.jpg';
-import collabImg2 from '../assets/Images/Collaborations_and_Outreach_image2.jpg';
-import collabImg3 from '../assets/Images/Collaborations_and_Outreach_image3.jpg';
-import collabImg4 from '../assets/Images/Collaborations_and_Outreach_image4.jpg';
-import collabImg5 from '../assets/Images/Collaborations_and_Outreach_image5.jpg';
+const heroImage = '/Images/Home/Home_image1.jpg';
+const collabImg1 = '/Images/Home/Collaborations_and_Outreach_image1.jpg';
+const collabImg2 = '/Images/Home/Collaborations_and_Outreach_image2.jpg';
+const collabImg3 = '/Images/Home/Collaborations_and_Outreach_image3.jpg';
+const collabImg4 = '/Images/Home/Collaborations_and_Outreach_image4.jpg';
+const collabImg5 = '/Images/Home/Collaborations_and_Outreach_image5.jpg';
 
 interface HomeViewProps {
   onNavigate: (tab: any) => void;
