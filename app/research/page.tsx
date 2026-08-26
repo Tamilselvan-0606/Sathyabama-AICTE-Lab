@@ -1,29 +1,23 @@
+'use client';
+
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
-import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '../animations';
-import { 
-  Search, 
-  Beaker, 
-  Atom, 
-  Dna, 
-  Layers, 
-  Cpu, 
-  Globe, 
-  Clock, 
-  CheckCircle, 
-  Download, 
-  BookOpen, 
-  TrendingUp, 
+import { fadeLeft, staggerContainer, staggerItem } from '@/lib/animations';
+import {
+  Search,
+  Atom,
+  Dna,
+  Layers,
+  Cpu,
+  Clock,
+  CheckCircle,
+  Download,
   ShieldAlert,
-  ArrowRight
 } from 'lucide-react';
-import { RESEARCH_PROJECTS, LABORATORIES } from '../data';
+import { RESEARCH_PROJECTS, LABORATORIES } from '@/lib/data';
 
-interface ResearchViewProps {
-  onNavigate: (tab: any) => void;
-}
-
-export default function ResearchView({ onNavigate }: ResearchViewProps) {
+export default function ResearchPage() {
   const [projectFilter, setProjectFilter] = useState<'all' | 'ongoing' | 'completed' | 'future'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -33,42 +27,42 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
       desc: 'Advancing fault-tolerant superconducting quantum processors using non-abelian braids. We construct hardware designed to withstand thermal and quantum decoherence at cryogenic limits.',
       icon: Atom,
       lead: 'Dr. Evelyn Vance',
-      projectsCount: 19
+      projectsCount: 19,
     },
     {
       title: 'Genomic Engineering',
       desc: 'Developing high-precision gene editors and synthetic biological pathways. Our research establishes non-viral somatic tissue insertion vectors and epigenetic regulators.',
       icon: Dna,
       lead: 'Dr. Marcus Thorne',
-      projectsCount: 14
+      projectsCount: 14,
     },
     {
       title: 'Advanced Materials & COFs',
       desc: 'Synthesizing porous coordination networks for targeted carbon dioxide and hydrogen capture. Our nanostructure group fabricates single-atom transistor devices.',
       icon: Layers,
       lead: 'Dr. Kenji Sato / Dr. Sarah Jenkins',
-      projectsCount: 16
+      projectsCount: 16,
     },
     {
       title: 'Neuromorphic AI & Swarms',
       desc: 'Prototyping memristive neuromorphic systems. We design spiking neural network software for decentralized, collective spacecraft and micro-drone swarm guidance.',
       icon: Cpu,
       lead: 'Dr. Helena Rostova',
-      projectsCount: 11
-    }
+      projectsCount: 11,
+    },
   ];
 
-  const filteredProjects = RESEARCH_PROJECTS.filter(project => {
+  const filteredProjects = RESEARCH_PROJECTS.filter((project) => {
     const matchesFilter = projectFilter === 'all' || project.status === projectFilter;
-    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          project.domain.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          project.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.domain.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesFilter && matchesSearch;
   });
 
   return (
     <div id="research-view" className="bg-[#F4F4F2] text-slate-800">
-      
       {/* SECTION 1: RESEARCH OVERVIEW */}
       <section id="research-hero" className="py-24 bg-white border-b border-slate-200">
         <div className="container mx-auto px-6 max-w-7xl">
@@ -125,7 +119,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
           {domains.map((dom, i) => {
             const Icon = dom.icon;
             return (
-              <div 
+              <div
                 key={i}
                 className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm transition-all duration-300 flex flex-col md:flex-row gap-6 group relative overflow-hidden"
               >
@@ -152,13 +146,13 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">Physical Facilities</span>
             <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight">
-              Laboratory Platforms & Infrastructure
+              Laboratory Platforms &amp; Infrastructure
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {LABORATORIES.map((lab, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all flex flex-col group relative"
               >
@@ -206,8 +200,8 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                 key={tab}
                 onClick={() => setProjectFilter(tab)}
                 className={`px-4 py-2 text-xs font-sans font-semibold tracking-wide transition-all rounded-lg cursor-pointer ${
-                  projectFilter === tab 
-                    ? 'bg-[#831238] text-white shadow-sm' 
+                  projectFilter === tab
+                    ? 'bg-[#831238] text-white shadow-sm'
                     : 'bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 hover:text-[#831238]'
                 }`}
               >
@@ -217,11 +211,10 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
           </div>
         </div>
 
-        {/* Search bar inside portfolio */}
         <div className="relative max-w-md mb-8">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Search projects by keywords, lead, or domain..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -231,7 +224,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((proj, idx) => (
-            <div 
+            <div
               key={idx}
               className="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
             >
@@ -254,7 +247,9 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                   {proj.description}
                 </p>
                 <div className="p-4 bg-[#831238]/5 rounded-xl space-y-2 border border-[#831238]/10 mt-4">
-                  <div className="text-[13px] text-slate-700 font-sans font-medium"><span className="font-bold text-[#831238]">Project Objective:</span> {proj.objective}</div>
+                  <div className="text-[13px] text-slate-700 font-sans font-medium">
+                    <span className="font-bold text-[#831238]">Project Objective:</span> {proj.objective}
+                  </div>
                 </div>
               </div>
 
@@ -264,7 +259,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                   <p className="text-slate-800 font-bold mt-1 tracking-wide">{proj.lead}</p>
                 </div>
                 <div>
-                  <span className="text-slate-500 tracking-wide font-semibold">Funding Pool & Term</span>
+                  <span className="text-slate-500 tracking-wide font-semibold">Funding Pool &amp; Term</span>
                   <p className="text-slate-800 font-bold mt-1 tracking-wide">{proj.funding} • {proj.duration}</p>
                 </div>
               </div>
@@ -285,7 +280,9 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_50%)]" />
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center relative z-10">
           <div className="lg:w-1/2 space-y-6">
-            <span className="font-sans text-xs tracking-wide text-amber-300 font-bold bg-white/10 px-3.5 py-1.5 rounded-lg border border-white/10">Digital Library Node</span>
+            <span className="font-sans text-xs tracking-wide text-amber-300 font-bold bg-white/10 px-3.5 py-1.5 rounded-lg border border-white/10">
+              Digital Library Node
+            </span>
             <h2 className="font-serif text-[30px] font-extrabold italic text-white tracking-tight leading-tight">
               Intellectual Asset Repository
             </h2>
@@ -297,24 +294,26 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                 We collaborate with the arXiv repository, NASA ADS, and PubMed Central to synchronize indexing, ensuring theoretical physicists, synthetic biochemists, and robotic engineers worldwide can repeat or refine our findings without commercial barriers.
               </p>
             </div>
-            <button 
-              onClick={() => onNavigate('resources')}
-              className="px-6 py-3.5 bg-white hover:bg-slate-50 text-[#831238] rounded-lg transition-all font-sans text-sm font-semibold flex items-center gap-2 cursor-pointer shadow-lg active:scale-95"
+            <Link
+              href="/resources"
+              className="px-6 py-3.5 bg-white hover:bg-slate-50 text-[#831238] rounded-lg transition-all font-sans text-sm font-semibold inline-flex items-center gap-2 cursor-pointer shadow-lg active:scale-95"
             >
               Open Digital Repository <Download className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
           <div className="lg:w-1/2 w-full">
             <div className="p-8 bg-slate-950/60 rounded-2xl border border-white/10 backdrop-blur-md space-y-6 shadow-xl">
               <div className="flex justify-between items-center pb-4 border-b border-white/10">
                 <span className="font-sans text-[10px] text-amber-200 tracking-wider">Database Status</span>
-                <span className="px-2.5 py-0.5 bg-green-500/20 text-green-300 border border-green-500/30 rounded-md font-sans text-[10px] font-bold tracking-wider">Synchronized</span>
+                <span className="px-2.5 py-0.5 bg-green-500/20 text-green-300 border border-green-500/30 rounded-md font-sans text-[10px] font-bold tracking-wider">
+                  Synchronized
+                </span>
               </div>
               <div className="space-y-4">
                 <div className="p-4 bg-slate-950/40 rounded-xl border border-white/10 flex justify-between items-center">
                   <div>
                     <h5 className="font-serif italic text-white text-sm">Preprint Index</h5>
-                    <p className="text-[10px] text-white/50 font-sans">arXiv & ADS Mirror Nodes</p>
+                    <p className="text-[10px] text-white/50 font-sans">arXiv &amp; ADS Mirror Nodes</p>
                   </div>
                   <span className="font-mono text-xs font-bold text-amber-300 tracking-wider">1,248 Papers</span>
                 </div>
@@ -344,7 +343,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
           <div className="lg:col-span-5 space-y-6">
             <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">Operational Ecosystem</span>
             <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-tight animate-none">
-              Grant Allocations & Capital Stewardship
+              Grant Allocations &amp; Capital Stewardship
             </h2>
             <p className="text-slate-600 font-sans text-sm leading-relaxed">
               We operate on an independent endowment structure, receiving capital from ministries, aerospace and biomedical licensing, and private philanthropic trusts focused on deep tech exploration.
@@ -378,7 +377,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
               <div className="space-y-5">
                 <div>
                   <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold mb-2">
-                    <span>Laboratory Consumables & Liquid Helium Logistics</span>
+                    <span>Laboratory Consumables &amp; Liquid Helium Logistics</span>
                     <span className="text-[#831238] font-bold">$18.5M (41%)</span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -387,7 +386,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                 </div>
                 <div>
                   <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold mb-2">
-                    <span>Doctoral Fellowships & Staff Remuneration</span>
+                    <span>Doctoral Fellowships &amp; Staff Remuneration</span>
                     <span className="text-[#831238] font-bold">$13.5M (30%)</span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -396,7 +395,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                 </div>
                 <div>
                   <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold mb-2">
-                    <span>Structural Infrastructure & Cleanroom Expansions</span>
+                    <span>Structural Infrastructure &amp; Cleanroom Expansions</span>
                     <span className="text-[#831238] font-bold">$9.0M (20%)</span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -405,7 +404,7 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
                 </div>
                 <div>
                   <div className="flex justify-between text-[13px] font-sans text-slate-700 font-semibold mb-2">
-                    <span>Visiting Research Grants & Summits Logistics</span>
+                    <span>Visiting Research Grants &amp; Summits Logistics</span>
                     <span className="text-[#831238] font-bold">$4.0M (9%)</span>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -460,7 +459,6 @@ export default function ResearchView({ onNavigate }: ResearchViewProps) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

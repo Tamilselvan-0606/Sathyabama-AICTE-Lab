@@ -1,28 +1,20 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '../animations';
-import { 
-  Download, 
-  BookOpen, 
-  Calendar, 
-  MapPin, 
-  FileText, 
-  ArrowRight, 
-  Search, 
-  Briefcase, 
-  Image as ImageIcon,
+import { fadeLeft, staggerContainer, staggerItem } from '@/lib/animations';
+import {
+  Download,
+  Calendar,
+  MapPin,
+  Search,
   CheckCircle,
-  HelpCircle,
-  X
+  X,
 } from 'lucide-react';
-import { PUBLICATIONS, NEWS_EVENTS } from '../data';
+import { PUBLICATIONS, NEWS_EVENTS } from '@/lib/data';
 
-interface ResourcesViewProps {
-  onNavigate: (tab: any) => void;
-}
-
-export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
-  const [activeTab, setActiveTab] = useState<'all' | 'papers' | 'news' | 'careers'>('all');
+export default function ResourcesPage() {
+  const [activeTab] = useState<'all' | 'papers' | 'news' | 'careers'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [applyRole, setApplyRole] = useState('');
@@ -36,7 +28,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
       term: '2 Years (Renewable)',
       stipend: '$75,000 / annum + housing allowance',
       desc: 'Seeking an ambitious researcher to operate Bluefors LD400 dilution refrigerators and design RF signal transport arrays for Bi-Sb topological superconductor junctions.',
-      requirements: ['Ph.D. in Solid State or Quantum Physics', 'Minimum 2 publications in high-impact journals', 'Experience with low-noise microwave electronics']
+      requirements: ['Ph.D. in Solid State or Quantum Physics', 'Minimum 2 publications in high-impact journals', 'Experience with low-noise microwave electronics'],
     },
     {
       title: 'Principal Investigator (Genomic Vectors)',
@@ -44,7 +36,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
       term: 'Tenure-track',
       stipend: '$115,000 / annum base',
       desc: 'Seeking a group leader to coordinate in-vivo CRISPR-Cas24 delivery systems, utilizing micro-fluidic synthesis matrices and cryo-TEM macromolecule reconstructions.',
-      requirements: ['Ph.D. in Molecular Biology or Genetic Chemistry', '3+ years post-doctoral group leading experience', 'Established track record with somatic epigenetic edits']
+      requirements: ['Ph.D. in Molecular Biology or Genetic Chemistry', '3+ years post-doctoral group leading experience', 'Established track record with somatic epigenetic edits'],
     },
     {
       title: 'Research Fellow (Autonomous Robotics)',
@@ -52,8 +44,8 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
       term: '3 Years (Fixed)',
       stipend: '$58,000 / annum',
       desc: 'Seeking a computational fellow to construct decentralized spiking neural network models for collective quadcopter swarms navigating GNSS-denied subterranean stages.',
-      requirements: ['Ph.D. or Master in Computer Science / Robotics', 'Expertise in C++ and CUDA neuromorphic architectures', 'Prior publications in swarm coordination protocols']
-    }
+      requirements: ['Ph.D. or Master in Computer Science / Robotics', 'Expertise in C++ and CUDA neuromorphic architectures', 'Prior publications in swarm coordination protocols'],
+    },
   ];
 
   const galleryImages = [
@@ -68,19 +60,21 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
     { url: 'https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&q=80&w=600', caption: 'Advanced Prototype Fabrication Lab' },
     { url: 'https://images.unsplash.com/photo-1563206767566-f4d0fb8353d2?auto=format&fit=crop&q=80&w=600', caption: 'Optical Metrology and Calibration Systems' },
     { url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600', caption: 'Aerospace Propulsion Testing Facility' },
-    { url: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=600', caption: 'High-Performance Supercomputing Cluster' }
+    { url: 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=600', caption: 'High-Performance Supercomputing Cluster' },
   ];
 
-  const filteredPublications = PUBLICATIONS.filter(pub => 
-    pub.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    pub.authors.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    pub.journal.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredPublications = PUBLICATIONS.filter(
+    (pub) =>
+      pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      pub.authors.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      pub.journal.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const filteredNewsEvents = NEWS_EVENTS.filter(ne => 
-    ne.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    ne.description.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    ne.location.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredNewsEvents = NEWS_EVENTS.filter(
+    (ne) =>
+      ne.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ne.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ne.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleApplySubmit = (e: React.FormEvent) => {
@@ -95,18 +89,17 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
 
   return (
     <div id="resources-view" className="bg-[#F4F4F2] text-slate-800">
-      
       {/* SECTION 1: RESOURCE HERO */}
       <section id="resources-hero" className="relative py-24 bg-white border-b border-slate-200 px-6">
         <div className="container mx-auto max-w-7xl flex flex-col lg:flex-row gap-16 items-center relative z-10">
           <motion.div className="lg:w-1/2 space-y-6" variants={fadeLeft} initial="hidden" animate="visible">
             <div>
               <span className="font-sans text-[11px] tracking-wider text-[#831238] font-bold bg-[#831238]/10 px-3.5 py-1.5 rounded-lg border border-[#831238]/20 uppercase">
-                Library & Academic Hub
+                Library &amp; Academic Hub
               </span>
             </div>
             <h1 className="font-serif text-[34px] font-extrabold italic text-slate-900 tracking-tight leading-tight">
-              Knowledge Repository & Opportunities
+              Knowledge Repository &amp; Opportunities
             </h1>
             <p className="text-slate-600 font-sans text-base leading-relaxed">
               Explore our open-access peer publications, register for upcoming international scientific conferences and hands-on workshops, review physical laboratory media assets, or submit applications to join our governing scientific faculty.
@@ -139,8 +132,8 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
 
           <div className="relative w-full md:w-80">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder="Search resources..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -150,7 +143,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
         </div>
       </section>
 
-      {/* SECTION 1: PUBLICATIONS (filtered by search) */}
+      {/* SECTION 1: PUBLICATIONS */}
       {(activeTab === 'all' || activeTab === 'papers') && (
         <section id="resource-publications" className="py-24 px-6 max-w-7xl mx-auto border-b border-slate-200">
           <div className="mb-12 space-y-4">
@@ -176,8 +169,8 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
                 </div>
                 <div className="pt-6 mt-6 border-t border-slate-100 flex justify-between items-center text-xs font-mono">
                   <span className="text-slate-400 tracking-wider">DOI: {pub.doi}</span>
-                  <a 
-                    href={pub.downloadUrl} 
+                  <a
+                    href={pub.downloadUrl}
                     className="text-[#831238] font-semibold flex items-center gap-1 hover:text-[#831238]/80 transition-colors"
                   >
                     <Download className="w-4 h-4 animate-none" /> Download Manuscript PDF
@@ -196,13 +189,13 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
             <div className="space-y-4">
               <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">Scientific Calendar</span>
               <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight">
-                News, Summits & Workshops
+                News, Summits &amp; Workshops
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {filteredNewsEvents.map((ne) => (
-                <div 
+                <div
                   key={ne.id}
                   className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between transition-all group relative"
                 >
@@ -228,7 +221,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
                       <div className="flex items-center gap-1 text-[11px] text-slate-500 font-sans mb-3 tracking-wide">
                         <MapPin className="w-3.5 h-3.5 text-[#831238]" /> {ne.location}
                       </div>
-                      <a 
+                      <a
                         href={ne.registrationUrl}
                         className="w-full py-2.5 bg-[#831238] text-white hover:bg-[#831238]/90 text-xs font-sans font-bold rounded-lg tracking-wide block text-center transition-all cursor-pointer border border-transparent"
                       >
@@ -249,13 +242,13 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="font-sans text-xs tracking-wider text-[#831238] font-bold">Media Repository</span>
             <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight">
-              Laboratory & Campus Media Gallery
+              Laboratory &amp; Campus Media Gallery
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {(showAllGallery ? galleryImages : galleryImages.slice(0, 6)).map((img, i) => (
-              <div 
+              <div
                 key={i}
                 className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md group relative transition-all"
               >
@@ -270,9 +263,9 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
               </div>
             ))}
           </div>
-          
+
           <div className="flex justify-center">
-            <button 
+            <button
               onClick={() => setShowAllGallery(!showAllGallery)}
               className="px-8 py-3.5 bg-[#831238] text-white rounded-lg text-sm font-sans font-semibold transition-all cursor-pointer hover:bg-[#831238]/90"
             >
@@ -297,7 +290,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
 
           <div className="space-y-8">
             {careers.map((career, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm transition-all grid grid-cols-1 lg:grid-cols-12 gap-8"
               >
@@ -309,7 +302,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
                   </div>
                   <h3 className="font-serif text-lg font-bold italic text-slate-900">{career.title}</h3>
                   <p className="text-slate-700 font-sans font-medium text-sm leading-relaxed">{career.desc}</p>
-                  
+
                   <div className="space-y-2 pt-2">
                     <h5 className="font-serif italic font-bold text-xs text-slate-900 tracking-wide">Position Requirements:</h5>
                     <ul className="text-xs text-slate-700 font-sans font-medium space-y-1">
@@ -334,7 +327,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
                       <p className="text-slate-700 font-bold mt-1 capitalize">{career.stipend}</p>
                     </div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => {
                       setApplyRole(career.title);
                       setShowApplyModal(true);
@@ -353,13 +346,12 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
       {/* APPLICATION MODAL POPUP */}
       {showApplyModal && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white rounded-2xl p-8 max-w-lg w-full border border-slate-200 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto group relative overflow-hidden"
           >
-              {/* Animated Bottom Line on Hover */}
-              <div className="absolute bottom-0 left-0 h-1.5 bg-[#831238] w-0 group-hover:w-full transition-all duration-300 ease-out z-0" />
+            <div className="absolute bottom-0 left-0 h-1.5 bg-[#831238] w-0 group-hover:w-full transition-all duration-300 ease-out z-0" />
             {!isSubmitted ? (
               <>
                 <div className="flex justify-between items-start">
@@ -401,15 +393,15 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
                   </div>
 
                   <div className="flex gap-3 justify-end pt-4">
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       onClick={closeApplyModal}
                       className="px-5 py-2.5 border border-slate-300 rounded-lg text-slate-600 hover:bg-slate-100 font-sans text-xs font-semibold cursor-pointer"
                     >
                       Cancel
                     </button>
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       className="px-6 py-2.5 bg-[#831238] text-white font-sans text-xs font-semibold rounded-lg cursor-pointer hover:bg-[#831238]/90"
                     >
                       Submit Application
@@ -428,7 +420,7 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
                     Your application for the position of <strong>{applyRole}</strong> has been cataloged under our Academic Council intake index. We will evaluate your peer-reviewed publications and ORCID index within 14 business days.
                   </p>
                 </div>
-                <button 
+                <button
                   onClick={closeApplyModal}
                   className="px-6 py-2.5 bg-slate-900 text-white font-sans text-xs font-semibold rounded-lg cursor-pointer hover:bg-slate-800"
                 >
@@ -439,7 +431,6 @@ export default function ResourcesView({ onNavigate }: ResourcesViewProps) {
           </motion.div>
         </div>
       )}
-
     </div>
   );
 }

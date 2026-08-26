@@ -10,6 +10,8 @@
 
 body {
   font-family: "Poppins", sans-serif !important;
+  background-color: #F4F4F2;
+  color: #0f172a;
 }
 
 /* Enforce non-italic style globally across the site */

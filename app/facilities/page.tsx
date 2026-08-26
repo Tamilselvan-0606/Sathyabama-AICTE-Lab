@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '../animations';
-import { Zap, ShieldAlert, Cpu, Award, FileText, ArrowRight, Layers, Briefcase, HelpCircle, CheckCircle, Download, X } from 'lucide-react';
-import { EQUIPMENTS, PATENTS } from '../data';
+import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '@/lib/animations';
+import { FileText, ArrowRight, Download, X } from 'lucide-react';
+
 const facilitiesImage1 = '/Images/Facilities/Facilities_image1.png';
 const facilitiesImage2 = '/Images/Facilities/Facilities_image2.png';
 const facilitiesImage3 = '/Images/Facilities/Facilities_image3.png';
@@ -18,12 +20,7 @@ const facilitiesStratasysF370 = '/Images/Facilities/facilities _stratasys f370.j
 const facilitiesMakerbotZ18 = '/Images/Facilities/facilities_image_makerbot z18.png';
 const facilitiesReplicatorPlus = '/Images/Facilities/facilities_replicator +.png';
 
-interface FacilitiesViewProps {
-  onNavigate: (tab: any) => void;
-}
-
-export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
-  const [patentFilter, setPatentFilter] = useState<'all' | 'Granted' | 'Pending'>('all');
+export default function FacilitiesPage() {
   const [activeManual, setActiveManual] = useState<{ title: string; image: string; desc: string } | null>(null);
 
   const subtractiveTools = [
@@ -33,7 +30,7 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'This is a high-precision CO2 laser cutter and engraver. Engineered for subtractive manufacturing across diverse non-metallic substrates.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage1,
-      manualImage: facilitiesImage8
+      manualImage: facilitiesImage8,
     },
     {
       title: '3-Axis CNC Milling',
@@ -41,8 +38,8 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'This machine is an industrial-grade 3-Axis CNC milling and routing system for automated carving and component prototyping. A 3-Axis CNC router is a computer controlled system used for subtractive manufacturing, it functions by removing material from a solid workpiece to create 2-D or 3-D shapes.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage2,
-      manualImage: facilitiesImage9
-    }
+      manualImage: facilitiesImage9,
+    },
   ];
 
   const printingTools = [
@@ -52,7 +49,7 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'Stratasys F370 is a professional 3-D printer specializing in polymer additive manufacturing, PolyJet, P3 and SAF. Its generous build volume and multi-material capacity allow for seamless fabrication.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage3,
-      manualImage: facilitiesStratasysF370
+      manualImage: facilitiesStratasysF370,
     },
     {
       title: 'MakerBot Replicator Z18',
@@ -60,7 +57,7 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'MakerBot Replicator Z18 is an enclosed 3-D printer with massive build volume and heated chamber. It enables the creation of massive, high-accuracy prototypes and delivers automated print monitoring.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage4,
-      manualImage: facilitiesMakerbotZ18
+      manualImage: facilitiesMakerbotZ18,
     },
     {
       title: 'MakerBot Replicator +',
@@ -68,8 +65,8 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'The MakerBot Replicator + serves as a rapid prototyping platform utilizing Fused Deposition Modeling (FDM) technology to translate digital CAD models into precise physical iterations.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage5,
-      manualImage: facilitiesReplicatorPlus
-    }
+      manualImage: facilitiesReplicatorPlus,
+    },
   ];
 
   const electronicsTools = [
@@ -79,7 +76,7 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'A signal generator is an electronic test instrument that synthesizes electrical waveforms with controllable frequency, amplitude and modulation characteristics.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage6,
-      manualImage: facilitiesImage11
+      manualImage: facilitiesImage11,
     },
     {
       title: 'HP Laser Printer',
@@ -87,39 +84,12 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       desc: 'HP Laser Printer is engineered for large scale workloads. It delivers high speed, vibrant colour and easily integrates into networks to support continuous operations.',
       contact: 'aciteidealab@sathyabama.ac.in',
       coverImage: facilitiesImage7,
-      manualImage: facilitiesImage17
-    }
-  ];
-
-  const incubationStartups = [
-    {
-      name: 'Aura Quantum Solutions',
-      focus: 'Topological Quantum Cryptography',
-      desc: 'Developing room-temperature topological optical interconnects and quantum key distribution platforms for enterprise networks. Incubated at ASRI since 2024.',
-      status: 'Series A Funded',
-      tech: 'Majorana Interconnects'
+      manualImage: facilitiesImage17,
     },
-    {
-      name: 'Cas24 Therapeutics',
-      focus: 'CRISPR somatic insertions',
-      desc: 'Deploying high-fidelity Cas24 endonucleases to treat degenerative muscular disorders in targeted somatic cell assemblies. Incubated at ASRI since 2025.',
-      status: 'Pre-clinical Trials',
-      tech: 'Somatic Cas24 Gene Vectors'
-    },
-    {
-      name: 'HydraCOF Polymers',
-      focus: 'Flue gas CO2 filtration',
-      desc: 'Manufacturing microporous composite filtration sheets embedded with covalent organic framework particles for direct industrial smokestack air capture.',
-      status: 'Pilot Factory Live',
-      tech: 'COF-909 Membrane Filters'
-    }
   ];
-
-  const filteredPatents = PATENTS.filter(pat => patentFilter === 'all' || pat.status === patentFilter);
 
   return (
     <div id="facilities-view" className="bg-[#F4F4F2] text-slate-800 w-full overflow-hidden">
-
       {/* SECTION 1: FACILITIES OVERVIEW */}
       <section id="facilities-hero" className="relative py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
         <div className="w-full">
@@ -130,14 +100,12 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
               </h1>
               <div className="bg-[#F4F4F2] rounded-2xl border border-slate-200 hover:border-[#831238] p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  {/* Top Row: Number */}
                   <div className="flex items-center justify-between mb-5">
                     <span className="font-serif text-sm font-bold text-[#831238] bg-[#831238]/10 px-3 py-1 rounded-full">
                       01
                     </span>
                   </div>
 
-                  {/* Description */}
                   <p className="text-slate-600 font-sans text-sm leading-relaxed text-justify">
                     The AICTE IDEA Lab is equipped with <strong className="text-slate-900 font-semibold">industry-standard machinery</strong> to support your journey from a digital concept to a physical prototype. Our advanced equipment spans both <strong className="text-slate-900 font-semibold">subtractive and additive manufacturing</strong>, along with essential <strong className="text-slate-900 font-semibold">electronics and testing systems</strong>.
                   </p>
@@ -186,7 +154,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group w-full md:w-[calc(33.333%-1.35rem)]"
               >
                 <div>
-                  {/* Cover Image */}
                   <div className="h-64 relative overflow-hidden bg-slate-900">
                     <img
                       src={tool.coverImage}
@@ -201,7 +168,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                     </div>
                   </div>
 
-                  {/* Body Content */}
                   <div className="p-7 space-y-4">
                     <div className="space-y-2">
                       <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
@@ -224,7 +190,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                   </div>
                 </div>
 
-                {/* Footer Action - View Image */}
                 <div className="p-7 pt-0">
                   <button
                     onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
@@ -263,7 +228,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                 className="bg-[#F4F4F2] rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  {/* Cover Image */}
                   <div className="h-64 relative overflow-hidden bg-slate-900">
                     <img
                       src={tool.coverImage}
@@ -278,7 +242,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                     </div>
                   </div>
 
-                  {/* Body Content */}
                   <div className="p-7 space-y-4">
                     <div className="space-y-2">
                       <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
@@ -301,7 +264,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                   </div>
                 </div>
 
-                {/* Footer Action - View Image */}
                 <div className="p-7 pt-0">
                   <button
                     onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
@@ -316,7 +278,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
           </motion.div>
         </div>
       </section>
-
 
       {/* SECTION 4: ELECTRONICS & SUPPORT EQUIPMENT */}
       <section id="electronics-support" className="py-24 bg-[#EBEBE9] px-8 md:px-16 lg:px-24 w-full">
@@ -341,7 +302,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group w-full md:w-[calc(33.333%-1.35rem)]"
               >
                 <div>
-                  {/* Cover Image */}
                   <div className="h-64 relative overflow-hidden bg-slate-900">
                     <img
                       src={tool.coverImage}
@@ -356,7 +316,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                     </div>
                   </div>
 
-                  {/* Body Content */}
                   <div className="p-7 space-y-4">
                     <div className="space-y-2">
                       <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
@@ -379,7 +338,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
                   </div>
                 </div>
 
-                {/* Footer Action - View Image */}
                 <div className="p-7 pt-0">
                   <button
                     onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
@@ -395,7 +353,7 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
         </div>
       </section>
 
-      {/* SECTION 6: MINOR EQUIPMENTS */}
+      {/* SECTION 5: MINOR EQUIPMENTS */}
       <section id="minor-equipments" className="py-24 px-8 md:px-16 lg:px-24 w-full bg-white border-t border-slate-200">
         <div className="w-full space-y-12">
           <div>
@@ -442,7 +400,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
       {activeManual && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-sm">
           <div className="bg-white rounded-2xl max-w-xl w-full flex flex-col shadow-2xl relative max-h-[90vh] overflow-hidden">
-            {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-slate-100 p-5 shrink-0">
               <h3 className="font-serif text-xl font-bold italic text-slate-900">{activeManual.title}</h3>
               <button
@@ -453,7 +410,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
               </button>
             </div>
 
-            {/* Modal Body */}
             <div className="p-4 flex-1 flex items-center justify-center">
               <img
                 src={activeManual.image}
@@ -462,7 +418,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
               />
             </div>
 
-            {/* Modal Fixed Footer */}
             <div className="flex items-center justify-end gap-3 p-4 px-6 border-t border-slate-100 bg-white shrink-0">
               <button
                 onClick={() => setActiveManual(null)}
@@ -484,7 +439,6 @@ export default function FacilitiesView({ onNavigate }: FacilitiesViewProps) {
           </div>
         </div>
       )}
-
     </div>
   );
 }

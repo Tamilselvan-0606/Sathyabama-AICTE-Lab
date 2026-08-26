@@ -1,22 +1,22 @@
+'use client';
+
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
-import { fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '../animations';
-import { Mail, GraduationCap, Award, BookOpen, Link2, Search, Filter } from 'lucide-react';
-import { SCIENTISTS } from '../data';
+import { fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '@/lib/animations';
+import { Mail, GraduationCap, Award, BookOpen, Link2, Search } from 'lucide-react';
+import { SCIENTISTS } from '@/lib/data';
 
-interface ScientistsViewProps {
-  onNavigate: (tab: any) => void;
-}
-
-export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
+export default function ScientistsPage() {
   const [roleFilter, setRoleFilter] = useState<'all' | 'director' | 'pi' | 'senior' | 'fellow' | 'advisor'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredScientists = SCIENTISTS.filter(scientist => {
+  const filteredScientists = SCIENTISTS.filter((scientist) => {
     const roleMatch = roleFilter === 'all' || scientist.role === roleFilter;
-    const nameMatch = scientist.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                      scientist.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                      scientist.interests.some(interest => interest.toLowerCase().includes(searchQuery.toLowerCase()));
+    const nameMatch =
+      scientist.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      scientist.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      scientist.interests.some((interest) => interest.toLowerCase().includes(searchQuery.toLowerCase()));
     return roleMatch && nameMatch;
   });
 
@@ -24,21 +24,20 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
     { name: 'Prof. Richard Goldstein', institution: 'CERN / ETH Zürich', discipline: 'Theoretical High-Energy Physics' },
     { name: 'Dr. Aris Thorne', institution: 'Max Planck Institute', discipline: 'Macromolecular Structure & Epigenetics' },
     { name: 'Prof. Lin Chen', institution: 'Stanford University', discipline: 'Semiconductor Mechanics & Topological States' },
-    { name: 'Dr. Fatima Al-Hassan', institution: 'King Abdullah University of Science and Technology', discipline: 'Porous Materials & COF Chemistry' }
+    { name: 'Dr. Fatima Al-Hassan', institution: 'King Abdullah University of Science and Technology', discipline: 'Porous Materials & COF Chemistry' },
   ];
 
   return (
     <div id="scientists-view" className="bg-[#F4F4F2] text-slate-800">
-      
       {/* SECTION 1: DIRECTOR'S MESSAGE */}
       <section id="directors-message" className="py-24 px-6 max-w-7xl mx-auto border-b border-slate-200">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <motion.div className="lg:col-span-5 relative" variants={fadeLeft} initial="hidden" animate="visible">
             <div className="absolute -inset-4 rounded-2xl bg-[#831238] opacity-5 blur-xl animate-none" />
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
-                alt="Dr. Evelyn Vance - Director ASRI" 
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                alt="Dr. Evelyn Vance - Director ASRI"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent text-white">
@@ -56,7 +55,7 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
             </h2>
             <div className="space-y-6 text-slate-600 font-sans text-base leading-relaxed">
               <p className="italic font-medium text-slate-800">
-                "We do not assemble at ASRI to produce increments of common understanding. We exist to systematically expand the boundaries of physical truth, leveraging absolute clarity and modern instrumentation."
+                &ldquo;We do not assemble at ASRI to produce increments of common understanding. We exist to systematically expand the boundaries of physical truth, leveraging absolute clarity and modern instrumentation.&rdquo;
               </p>
               <p>
                 As researchers, we are stewards of the absolute truths of nature. In an era where technological change happens at a rapid pace, our role at the Aetheris Scientific Research Institute is to provide a calm, robust, and autonomous harbor where physical theorists, molecular chemists, and roboticists can dismantle complexity back to its axioms.
@@ -93,8 +92,8 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
                 variants={staggerItem}
                 onClick={() => setRoleFilter(role)}
                 className={`px-4 py-2 text-xs font-sans font-semibold tracking-wide transition-all rounded-lg cursor-pointer ${
-                  roleFilter === role 
-                    ? 'bg-[#831238] text-white shadow-sm' 
+                  roleFilter === role
+                    ? 'bg-[#831238] text-white shadow-sm'
                     : 'bg-white hover:bg-slate-100 border border-slate-200 text-slate-700'
                 }`}
               >
@@ -107,8 +106,8 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
         {/* Directory Search */}
         <div className="relative max-w-md mb-12">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Search by name, title, or research field..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -118,7 +117,7 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
 
         <div className="space-y-16">
           {filteredScientists.map((scientist, idx) => (
-            <div 
+            <div
               key={idx}
               className="bg-white rounded-2xl border border-slate-200 p-8 shadow-md transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 group relative overflow-hidden"
             >
@@ -167,11 +166,13 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
 
                   <div className="space-y-3">
                     <h4 className="font-serif italic text-xs text-slate-900 tracking-wide flex items-center gap-1.5">
-                      <Award className="w-4 h-4 text-[#831238]" /> Awards & Recognitions
+                      <Award className="w-4 h-4 text-[#831238]" /> Awards &amp; Recognitions
                     </h4>
                     <ul className="space-y-1.5 text-slate-700 font-sans font-medium text-[11px] leading-relaxed">
                       {scientist.awards.map((award, i) => (
-                        <li key={i} className="truncate flex items-start gap-1.5"><span className="text-[#831238] mt-0.5">•</span> {award}</li>
+                        <li key={i} className="truncate flex items-start gap-1.5">
+                          <span className="text-[#831238] mt-0.5">•</span> {award}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -183,7 +184,9 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
                   </h4>
                   <ul className="space-y-1.5 text-slate-700 font-sans font-medium text-[11px] leading-relaxed italic">
                     {scientist.publications.map((pub, i) => (
-                      <li key={i} className="flex items-start gap-1.5"><span className="text-[#831238] mt-0.5">•</span> {pub}</li>
+                      <li key={i} className="flex items-start gap-1.5">
+                        <span className="text-[#831238] mt-0.5">•</span> {pub}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -209,12 +212,12 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
                 Our scheme offers 3 to 12 months of fully-funded residencies, including research stipends, access to Cryo-TEM, sub-Kelvin cryostats, NVIDIA DGX clusters, and customized molecular synthesis platforms. Applications are evaluated twice annually.
               </p>
             </div>
-            <button 
-              onClick={() => onNavigate('resources')}
-              className="px-6 py-3.5 bg-[#831238] hover:bg-[#831238]/90 text-white rounded-lg transition-all font-sans text-sm font-semibold flex items-center gap-2 cursor-pointer"
+            <Link
+              href="/resources"
+              className="px-6 py-3.5 bg-[#831238] hover:bg-[#831238]/90 text-white rounded-lg transition-all font-sans text-sm font-semibold inline-flex items-center gap-2 cursor-pointer"
             >
-              Exchange Guidelines & Application
-            </button>
+              Exchange Guidelines &amp; Application
+            </Link>
           </div>
 
           <div className="lg:col-span-7">
@@ -226,21 +229,27 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
                     <h5 className="font-serif italic text-slate-900 text-sm">Dr. Arthur Pendelton</h5>
                     <p className="text-[11px] text-slate-500 font-sans">University of Oxford, UK</p>
                   </div>
-                  <span className="text-[10px] font-sans font-bold bg-[#831238]/10 text-[#831238] border border-[#831238]/20 px-2.5 py-0.5 rounded-md capitalize tracking-wide">Quantum Optics</span>
+                  <span className="text-[10px] font-sans font-bold bg-[#831238]/10 text-[#831238] border border-[#831238]/20 px-2.5 py-0.5 rounded-md capitalize tracking-wide">
+                    Quantum Optics
+                  </span>
                 </div>
                 <div className="p-4 bg-white rounded-xl border border-slate-200 flex justify-between items-center">
                   <div>
                     <h5 className="font-serif italic text-slate-900 text-sm">Dr. Mei-Ling Zhang</h5>
                     <p className="text-[11px] text-slate-500 font-sans">Tsinghua University, Beijing</p>
                   </div>
-                  <span className="text-[10px] font-sans font-bold bg-[#831238]/10 text-[#831238] border border-[#831238]/20 px-2.5 py-0.5 rounded-md capitalize tracking-wide">Nanomaterials Synthesis</span>
+                  <span className="text-[10px] font-sans font-bold bg-[#831238]/10 text-[#831238] border border-[#831238]/20 px-2.5 py-0.5 rounded-md capitalize tracking-wide">
+                    Nanomaterials Synthesis
+                  </span>
                 </div>
                 <div className="p-4 bg-white rounded-xl border border-slate-200 flex justify-between items-center">
                   <div>
                     <h5 className="font-serif italic text-slate-900 text-sm">Prof. Hans-Dieter</h5>
                     <p className="text-[11px] text-slate-500 font-sans">Max Planck Institute, Germany</p>
                   </div>
-                  <span className="text-[10px] font-sans font-bold bg-[#831238]/10 text-[#831238] border border-[#831238]/20 px-2.5 py-0.5 rounded-md capitalize tracking-wide">Epigenetics Research</span>
+                  <span className="text-[10px] font-sans font-bold bg-[#831238]/10 text-[#831238] border border-[#831238]/20 px-2.5 py-0.5 rounded-md capitalize tracking-wide">
+                    Epigenetics Research
+                  </span>
                 </div>
               </div>
             </div>
@@ -262,7 +271,7 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {advisoryBoard.map((board, i) => (
-            <div 
+            <div
               key={i}
               className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
             >
@@ -279,7 +288,6 @@ export default function ScientistsView({ onNavigate }: ScientistsViewProps) {
           ))}
         </div>
       </section>
-
     </div>
   );
 }
