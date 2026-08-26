@@ -65,17 +65,25 @@ i,
 }
 
 /* Premium Card Hover Effect globally applied to all standard cards */
-div[class*="bg-white"][class*="rounded-2xl"][class*="border-slate-200"],
-div[class*="bg-white"][class*="rounded-xl"][class*="border-slate-200"],
-div[class*="bg-slate-50"][class*="rounded-2xl"][class*="border-slate-200"] {
+div[class*="border-slate-200"][class*="rounded-2xl"],
+div[class*="border-slate-200"][class*="rounded-xl"],
+div[class*="bg-white"][class*="rounded-2xl"],
+div[class*="bg-white"][class*="rounded-xl"],
+div[class*="bg-[#F4F4F2]"][class*="rounded-2xl"],
+div[class*="bg-[#F4F4F2]"][class*="rounded-xl"],
+div[class*="bg-slate-50"][class*="rounded-2xl"] {
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease-out, transform 0.3s ease-out;
 }
 
-div[class*="bg-white"][class*="rounded-2xl"][class*="border-slate-200"]:hover,
-div[class*="bg-white"][class*="rounded-xl"][class*="border-slate-200"]:hover,
-div[class*="bg-slate-50"][class*="rounded-2xl"][class*="border-slate-200"]:hover {
+div[class*="border-slate-200"][class*="rounded-2xl"]:hover,
+div[class*="border-slate-200"][class*="rounded-xl"]:hover,
+div[class*="bg-white"][class*="rounded-2xl"]:hover,
+div[class*="bg-white"][class*="rounded-xl"]:hover,
+div[class*="bg-[#F4F4F2]"][class*="rounded-2xl"]:hover,
+div[class*="bg-[#F4F4F2]"][class*="rounded-xl"]:hover,
+div[class*="bg-slate-50"][class*="rounded-2xl"]:hover {
   border-color: #831238 !important;
   outline: 3px solid #831238 !important;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { fadeLeft, staggerContainer, staggerItem, viewportOnce } from '../animations';
-import aboutImg1 from '../assets/Images/About_image1.jpg';
+const aboutImg1 = '/Images/About/About_image1.jpg';
 
 interface AboutViewProps {
   onNavigate: (tab: any) => void;
