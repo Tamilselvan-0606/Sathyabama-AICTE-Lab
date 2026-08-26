@@ -1,13 +1,12 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'motion/react';
-import { fadeLeft, staggerContainer, staggerItem, viewportOnce } from '../animations';
+import { fadeLeft, staggerContainer, staggerItem, viewportOnce } from '@/lib/animations';
+
 const aboutImg1 = '/Images/About/About_image1.jpg';
 
-interface AboutViewProps {
-  onNavigate: (tab: any) => void;
-}
-
-export default function AboutView({ onNavigate }: AboutViewProps) {
+export default function AboutPage() {
   const missionItems = [
     {
       number: '01',
@@ -33,7 +32,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
 
   return (
     <div id="about-us-view" className="bg-[#F4F4F2] text-slate-800 w-full overflow-hidden">
-      
       {/* SECTION 1: ABOUT US / OVERVIEW */}
       <section id="about-us-overview" className="py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
         <div className="w-full">
@@ -54,10 +52,10 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 </p>
               </div>
             </motion.div>
-            <motion.div 
-              className="lg:col-span-5 relative w-full flex items-center justify-center" 
-              variants={fadeLeft} 
-              initial="hidden" 
+            <motion.div
+              className="lg:col-span-5 relative w-full flex items-center justify-center"
+              variants={fadeLeft}
+              initial="hidden"
               animate="visible"
             >
               <div className="w-full h-auto overflow-hidden rounded-xl border border-slate-200 shadow-md">
@@ -82,14 +80,12 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               </h2>
               <div className="bg-white rounded-2xl border border-slate-200 hover:border-[#831238] p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  {/* Top Row: Number */}
                   <div className="flex items-center justify-between mb-5">
                     <span className="font-serif text-sm font-bold text-[#831238] bg-[#831238]/10 px-3 py-1 rounded-full">
                       01
                     </span>
                   </div>
 
-                  {/* Description */}
                   <p className="text-slate-600 font-sans text-sm leading-relaxed text-justify">
                     To establish as a <strong className="text-slate-900 font-semibold">vibrant centre of innovation, creativity, and experiential learning</strong> that nurtures problem-solvers, innovators, and entrepreneurs by transforming ideas into impactful technologies and sustainable solutions.
                   </p>
@@ -123,7 +119,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             </h2>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
             variants={staggerContainer}
             initial="hidden"
@@ -137,19 +133,16 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 className="bg-[#F4F4F2] hover:bg-white rounded-2xl border border-slate-200 hover:border-[#831238] p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* Top Row: Number */}
                   <div className="flex items-center justify-between mb-5">
                     <span className="font-serif text-sm font-bold text-[#831238] bg-[#831238]/10 px-3 py-1 rounded-full">
                       {item.number}
                     </span>
                   </div>
 
-                  {/* Title */}
                   <h3 className="font-serif text-lg font-bold italic text-slate-900 group-hover:text-[#831238] transition-colors leading-snug mb-3">
                     {item.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-slate-600 font-sans text-sm leading-relaxed text-justify">
                     {item.desc}
                   </p>
@@ -159,7 +152,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           </motion.div>
         </div>
       </section>
-
     </div>
   );
 }

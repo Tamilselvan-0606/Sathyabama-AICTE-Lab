@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
 import {
   Atom,
   Dna,
@@ -8,14 +10,12 @@ import {
   Activity,
   Globe,
   ArrowRight,
-  MapPin,
   Beaker,
   Layers,
   Users,
-  Award,
-  ChevronDown,
   Sparkles
 } from 'lucide-react';
+
 const heroImage = '/Images/Home/Home_image1.jpg';
 const collabImg1 = '/Images/Home/Collaborations_and_Outreach_image1.jpg';
 const collabImg2 = '/Images/Home/Collaborations_and_Outreach_image2.jpg';
@@ -23,67 +23,13 @@ const collabImg3 = '/Images/Home/Collaborations_and_Outreach_image3.jpg';
 const collabImg4 = '/Images/Home/Collaborations_and_Outreach_image4.jpg';
 const collabImg5 = '/Images/Home/Collaborations_and_Outreach_image5.jpg';
 
-interface HomeViewProps {
-  onNavigate: (tab: any) => void;
-}
-
-export default function HomeView({ onNavigate }: HomeViewProps) {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<'all' | 'physics' | 'bio' | 'materials'>('all');
-
-  const researchCategories = [
-    {
-      title: 'Quantum Physics',
-      desc: 'Topological state manipulation, quantum computing architectures, and Josephson junctions.',
-      icon: Atom,
-      color: 'from-amber-500 to-rose-600',
-      stat: '21 Active Projects'
-    },
-    {
-      title: 'Biotechnology',
-      desc: 'Precision genomic editing with CRISPR-Cas24 and direct cellular reprograming pipelines.',
-      icon: Dna,
-      color: 'from-red-600 to-orange-500',
-      stat: '14 Active Projects'
-    },
-    {
-      title: 'Nanotechnology',
-      desc: 'Synthesis of covalent organic frameworks (COFs) and armchair graphene nanoribbons.',
-      icon: Layers,
-      color: 'from-amber-600 to-red-500',
-      stat: '16 Active Projects'
-    },
-    {
-      title: 'Environmental Science',
-      desc: 'Selective carbon capture porous polymers and atmospheric thermodynamic modeling.',
-      icon: Globe,
-      color: 'from-rose-500 to-amber-500',
-      stat: '12 Active Projects'
-    },
-    {
-      title: 'Medical Research',
-      desc: 'Therapeutic vector designs, cellular senescence regulation, and genetic molecular repairs.',
-      icon: Activity,
-      color: 'from-red-500 to-rose-600',
-      stat: '9 Active Projects'
-    },
-    {
-      title: 'Robotics & AI',
-      desc: 'Spiking neural networks, memristive logic devices, and autonomous swarm spacecraft navigators.',
-      icon: Cpu,
-      color: 'from-orange-600 to-amber-600',
-      stat: '11 Active Projects'
-    }
-  ];
-
+export default function HomePage() {
   return (
     <div id="home-view" className="bg-slate-50 text-slate-800">
-
-      {/* SECTION 1: HERO BANNER (Asymmetric split-layout matching Clean Minimalism) */}
+      {/* SECTION 1: HERO BANNER */}
       <section id="hero-banner" className="relative min-h-screen flex items-stretch overflow-hidden bg-white text-slate-900 border-b border-gray-200">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-screen">
-
-          {/* Hero Left Column (5/12) */}
+          {/* Hero Left Column */}
           <div className="lg:col-span-5 flex flex-col justify-center p-8 md:p-16 lg:py-20 lg:pl-24 lg:pr-6 bg-white relative z-20">
             <div className="absolute top-10 left-8 md:left-16 lg:left-24 text-[10px] tracking-wider text-gray-400 mb-4 font-sans font-semibold">
               AICTE IDEA LAB // Sathyabama Institute
@@ -97,9 +43,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
 
             <h1 className="text-[30px] font-extrabold leading-tight text-[#831238] mb-8 tracking-tight">
-              Welcome to the
-              <span className="text-[#831238]"> AICTE IDEA LAB
-              </span>
+              Welcome to the <span className="text-[#831238]">AICTE IDEA LAB</span>
             </h1>
 
             <p className="text-sm md:text-base text-slate-600 max-w-xl leading-relaxed mb-10 font-sans text-justify">
@@ -107,12 +51,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => onNavigate('research')}
+              <Link
+                href="/facilities"
                 className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 Explore Our Facilities <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfwb7b8WzLR8hh3suyVD9DWKouidNcnxRBZ9yJ_9BHVt7m0lA/viewform"
                 target="_blank"
@@ -124,7 +68,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
           </div>
 
-          {/* Image / Data Visual Column (7/12) */}
+          {/* Image / Data Visual Column */}
           <div className="lg:col-span-7 flex items-center justify-center p-8 md:p-16 lg:py-20 lg:pr-24 lg:pl-6 bg-white relative z-10">
             <div className="relative w-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-200">
               <img
@@ -134,7 +78,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               />
             </div>
           </div>
-
         </div>
       </section>
 
@@ -150,12 +93,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </p>
           </div>
           <div>
-            <button
-              onClick={() => onNavigate('research')}
-              className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer"
+            <Link
+              href="/research"
+              className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg inline-flex items-center justify-center gap-2 cursor-pointer"
             >
               View Student Projects <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="lg:col-span-5 relative">
@@ -169,7 +112,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
       </section>
 
-      {/* SECTION 3: BRING YOUR PROJECTS TO LIFE (dark bg) */}
+      {/* SECTION 3: BRING YOUR PROJECTS TO LIFE */}
       <section id="excellence-section" className="py-24 bg-[#831238] border-y border-red-950 px-8 md:px-16 lg:px-24 w-full">
         <div className="w-full">
           <div className="max-w-3xl mb-16 space-y-4">
@@ -247,12 +190,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             Have an idea for a smart agriculture system, an automated healthcare monitor, or a next-generation robotic arm? Bring it here! We actively encourage students to utilize our machineries and IoT equipment to make their own projects. Build solutions that address real-world societal and industrial challenges, and take your first step toward entrepreneurship and technology commercialization.
           </p>
           <div>
-            <button
-              onClick={() => onNavigate('research')}
-              className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer"
+            <Link
+              href="/research"
+              className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg inline-flex items-center justify-center gap-2 cursor-pointer"
             >
               Join the Innovation Hub <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="lg:col-span-5 relative">
@@ -266,11 +209,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
       </section>
 
-
-
-
-
-      {/* SECTION 7: ALWAYS OPEN FOR INNOVATION */}
+      {/* SECTION 5: ALWAYS OPEN FOR INNOVATION */}
       <section id="collab-section" className="py-24 bg-[#F4F4F2] border-t border-slate-200 px-8 md:px-16 lg:px-24 w-full">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7 space-y-8">
@@ -278,7 +217,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               Always Open for Innovation
             </h2>
             <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans text-justify">
-              Innovation doesn't run on a strict schedule. The AICTE IDEA Lab is open for students and faculty every day from 9:00 AM to 11:00 PM. During special events, hackathons, and intensive project development phases, the lab remains accessible 24/7 so you never have to stop building.
+              Innovation doesn&apos;t run on a strict schedule. The AICTE IDEA Lab is open for students and faculty every day from 9:00 AM to 11:00 PM. During special events, hackathons, and intensive project development phases, the lab remains accessible 24/7 so you never have to stop building.
             </p>
             <div>
               <a
@@ -293,10 +232,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="w-full max-w-md bg-gradient-to-br from-[#831238] via-[#700d2e] to-[#550821] rounded-2xl p-6 sm:p-7 shadow-xl border border-white/15 backdrop-blur-md overflow-hidden relative">
-              {/* Subtle decorative glow */}
               <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
 
-              {/* Header */}
               <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/10 relative z-10">
                 <span className="font-sans text-[10px] tracking-wider font-bold uppercase text-amber-300 bg-white/10 border border-white/10 px-2.5 py-1 rounded-md">
                   Lab Schedule
@@ -311,7 +248,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
 
               <div className="space-y-3.5 relative z-10">
-                {/* Daily Hours */}
                 <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
                   <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
                     <Globe className="w-4 h-4" />
@@ -322,7 +258,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   </div>
                 </div>
 
-                {/* Hackathons */}
                 <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
                   <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
                     <Sparkles className="w-4 h-4" />
@@ -338,7 +273,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   </div>
                 </div>
 
-                {/* Open To */}
                 <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
                   <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
                     <Users className="w-4 h-4" />
@@ -354,23 +288,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
       </section>
 
-      {/* SECTION 8: COLLABORATIONS AND OUTREACH */}
+      {/* SECTION 6: COLLABORATIONS AND OUTREACH */}
       <section id="tbi-initiatives-section" className="py-20 bg-white border-t border-slate-200 px-8 md:px-16 lg:px-24 w-full overflow-hidden">
         <div className="w-full">
-          {/* Header */}
           <div className="mb-10">
             <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
               Collaborations and Outreach
             </h2>
           </div>
 
-          {/* Auto-scroll Marquee Container */}
           <div className="relative w-full overflow-hidden">
-            {/* Left & Right subtle gradient fade for smooth edge appearance */}
             <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10" />
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10" />
 
-            {/* Marquee Track (Repeated for seamless continuous infinite loop) */}
             <div className="animate-marquee flex gap-6 items-center py-2">
               {[
                 { img: collabImg1, alt: 'Startup Voyage' },
@@ -409,9 +339,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
         </div>
       </section>
-
-
-
     </div>
   );
 }
