@@ -90,6 +90,15 @@ div[class*="bg-slate-50"][class*="rounded-2xl"]:hover {
   outline: 3px solid #831238 !important;
 }
 
+/* Exclude Contact Page from hover brown border/outline */
+#contact-view div:hover,
+#contact-view div[class*="rounded-xl"]:hover,
+#contact-view div[class*="rounded-2xl"]:hover,
+#contact-view div[class*="bg-white"]:hover {
+  outline: none !important;
+  border-color: #cbd5e1 !important;
+}
+
 /* Auto-scroll Marquee */
 @keyframes marquee {
   0% {
