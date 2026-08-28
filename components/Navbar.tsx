@@ -5,14 +5,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
-import { usePortal } from '@/context/PortalContext';
 
 const logoImg = '/Images/Home/logo.png';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { openPortal } = usePortal();
 
   // Close mobile menu on path change
   useEffect(() => {
@@ -71,12 +69,14 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <button
-            onClick={openPortal}
+          <a
+            href="https://goodyguys.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-3 py-2 text-[15px] font-sans font-semibold tracking-wide whitespace-nowrap transition-all duration-200 text-gray-700 hover:text-[#831238] hover:bg-[#831238]/10 rounded-lg cursor-pointer"
           >
             Products
-          </button>
+          </a>
         </nav>
 
         {/* Mobile Menu Toggle Button */}
@@ -116,15 +116,15 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openPortal();
-                }}
+              <a
+                href="https://goodyguys.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-left px-4 py-3 rounded-lg text-sm font-sans font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all"
               >
                 Products
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

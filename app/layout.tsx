@@ -7,8 +7,13 @@ import BackToTop from '@/components/BackToTop';
 import { PortalProvider } from '@/context/PortalContext';
 
 export const metadata: Metadata = {
-  title: 'Aetheris Scientific Research Institute | AICTE IDEA Lab',
+  title: 'AICTE Idea Lab',
   description: 'AICTE IDEA Lab at Sathyabama Institute of Science and Technology - Innovation, Prototyping and Scientific Research.',
+  icons: {
+    icon: '/Images/Home/titlebar-icon.jpg',
+    shortcut: '/Images/Home/titlebar-icon.jpg',
+    apple: '/Images/Home/titlebar-icon.jpg',
+  },
 };
 
 export default function RootLayout({
