@@ -213,7 +213,7 @@ export default function ScientistsPage() {
               </p>
             </div>
             <Link
-              href="/resources"
+              href="/events-and-announcements"
               className="px-6 py-3.5 bg-[#831238] hover:bg-[#831238]/90 text-white rounded-lg transition-all font-sans text-sm font-semibold inline-flex items-center gap-2 cursor-pointer"
             >
               Exchange Guidelines &amp; Application

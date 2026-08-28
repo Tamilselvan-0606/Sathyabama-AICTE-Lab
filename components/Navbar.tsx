@@ -23,7 +23,7 @@ export default function Navbar() {
     { id: 'facilities', path: '/facilities', label: 'Facilities' },
     { id: 'research-and-training', path: '/research-and-training', label: 'Research & Training' },
     { id: 'scientists', path: '/scientists', label: 'Teams' },
-    { id: 'resources', path: '/resources', label: 'Events & Announcements' },
+    { id: 'events-and-announcements', path: '/events-and-announcements', label: 'Events & Announcements' },
     { id: 'gallery', path: '/gallery', label: 'Gallery' },
     { id: 'contact', path: '/contact', label: 'Contact' },
   ];
