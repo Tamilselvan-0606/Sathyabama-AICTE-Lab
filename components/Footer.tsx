@@ -10,7 +10,7 @@ export default function Footer() {
     { id: 'about', path: '/about', label: 'About Us' },
     { id: 'facilities', path: '/facilities', label: 'Facilities' },
     { id: 'research-and-training', path: '/research-and-training', label: 'Research & Training' },
-    { id: 'scientists', path: '/scientists', label: 'Teams' },
+    { id: 'team', path: '/team', label: 'Team' },
     { id: 'events-and-announcements', path: '/events-and-announcements', label: 'Events & Announcements' },
     { id: 'gallery', path: '/gallery', label: 'Gallery' },
   ];
