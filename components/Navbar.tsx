@@ -21,7 +21,7 @@ export default function Navbar() {
     { id: 'home', path: '/', label: 'Home' },
     { id: 'about', path: '/about', label: 'About Us' },
     { id: 'facilities', path: '/facilities', label: 'Facilities' },
-    { id: 'research', path: '/research', label: 'Research & Training' },
+    { id: 'research-and-training', path: '/research-and-training', label: 'Research & Training' },
     { id: 'scientists', path: '/scientists', label: 'Teams' },
     { id: 'resources', path: '/resources', label: 'Events & Announcements' },
     { id: 'gallery', path: '/gallery', label: 'Gallery' },
