@@ -91,7 +91,7 @@ export default function HomePage() {
           </div>
           <div>
             <Link
-              href="/research"
+              href="/research-and-training"
               className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg inline-flex items-center justify-center gap-2 cursor-pointer"
             >
               View Student Projects <ArrowRight className="w-4 h-4" />
@@ -188,7 +188,7 @@ export default function HomePage() {
           </p>
           <div>
             <Link
-              href="/research"
+              href="/research-and-training"
               className="px-8 py-4 bg-[#831238] hover:bg-[#620a27] text-white text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg inline-flex items-center justify-center gap-2 cursor-pointer"
             >
               Join the Innovation Hub <ArrowRight className="w-4 h-4" />
