@@ -95,47 +95,47 @@ const STUDENT_AMBASSADORS = [
 
 export default function TeamPage() {
   return (
-    <div id="team-view" className="bg-[#F4F4F2] text-slate-800">
+    <div id="team-view" className="bg-[#F4F4F2] text-slate-800 w-full overflow-hidden">
       {/* SECTION 1: LEADERSHIP & FACULTY MENTORS */}
-      <section id="leadership-faculty" className="py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full">
-          <div className="mb-10">
-            <h1 className="text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
+      <section id="leadership-faculty" className="py-14 sm:py-20 md:py-24 bg-white border-b border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto">
+          <div className="mb-6 sm:mb-10">
+            <h1 className="text-2xl sm:text-[28px] md:text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
               Leadership &amp; Faculty Mentors
             </h1>
           </div>
 
-          <div className="overflow-x-auto border border-slate-300 bg-white">
-            <table className="w-full text-left border-collapse border border-slate-300">
+          <div className="overflow-x-auto border border-slate-300 bg-white rounded-lg shadow-sm w-full">
+            <table className="w-full text-left border-collapse border border-slate-300 min-w-[650px]">
               <thead>
-                <tr className="bg-[#831238] text-white font-sans text-sm font-semibold tracking-wider">
-                  <th className="py-4 px-6 w-52 sm:w-60 border border-slate-300 uppercase text-center">
+                <tr className="bg-[#831238] text-white font-sans text-xs sm:text-sm font-semibold tracking-wider">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-44 sm:w-56 border border-slate-300 uppercase text-center">
                     Name
                   </th>
-                  <th className="py-4 px-6 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 border border-slate-300 uppercase text-center">
                     Designation / Role
                   </th>
-                  <th className="py-4 px-6 w-60 sm:w-72 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-48 sm:w-64 border border-slate-300 uppercase text-center">
                     Email
                   </th>
-                  <th className="py-4 px-6 w-32 sm:w-40 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-24 sm:w-36 border border-slate-300 uppercase text-center">
                     Photo
                   </th>
                 </tr>
               </thead>
-              <tbody className="font-sans text-sm divide-y divide-slate-300">
+              <tbody className="font-sans text-xs sm:text-sm divide-y divide-slate-300">
                 {LEADERSHIP_FACULTY.map((member, index) => (
                   <tr
                     key={index}
                     className="hover:bg-slate-50 transition-colors duration-150"
                   >
-                    <td className="py-5 px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
                       {member.name}
                     </td>
-                    <td className="py-5 px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-center sm:text-left">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-center sm:text-left">
                       {member.role}
                     </td>
-                    <td className="py-5 px-6 text-slate-700 border border-slate-300 align-middle text-center">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 text-slate-700 border border-slate-300 align-middle text-center">
                       <a
                         href={`mailto:${member.email}`}
                         className="text-[#831238] hover:underline font-medium break-all"
@@ -143,9 +143,9 @@ export default function TeamPage() {
                         {member.email}
                       </a>
                     </td>
-                    <td className="py-4 px-6 border border-slate-300 align-middle text-center">
+                    <td className="py-3 sm:py-4 px-3.5 sm:px-6 border border-slate-300 align-middle text-center">
                       {member.photo ? (
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full overflow-hidden border-2 border-slate-200 shadow-sm bg-slate-50">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto rounded-full overflow-hidden border-2 border-slate-200 shadow-sm bg-slate-50">
                           <img
                             src={member.photo}
                             alt={member.name}
@@ -153,7 +153,7 @@ export default function TeamPage() {
                           />
                         </div>
                       ) : (
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
                           <span className="text-[10px] font-sans font-medium text-slate-400">Photo</span>
                         </div>
                       )}
@@ -167,44 +167,44 @@ export default function TeamPage() {
       </section>
 
       {/* SECTION 2: STUDENT AMBASSADORS */}
-      <section id="student-ambassadors" className="py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full">
-          <div className="mb-10">
-            <h2 className="text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
+      <section id="student-ambassadors" className="py-14 sm:py-20 md:py-24 bg-white border-b border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto">
+          <div className="mb-6 sm:mb-10">
+            <h2 className="text-2xl sm:text-[28px] md:text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
               Student Ambassadors
             </h2>
           </div>
 
-          <div className="overflow-x-auto border border-slate-300 bg-white">
-            <table className="w-full text-left border-collapse border border-slate-300">
+          <div className="overflow-x-auto border border-slate-300 bg-white rounded-lg shadow-sm w-full">
+            <table className="w-full text-left border-collapse border border-slate-300 min-w-[550px]">
               <thead>
-                <tr className="bg-[#831238] text-white font-sans text-sm font-semibold tracking-wider">
-                  <th className="py-4 px-6 w-52 sm:w-60 border border-slate-300 uppercase text-center">
+                <tr className="bg-[#831238] text-white font-sans text-xs sm:text-sm font-semibold tracking-wider">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-44 sm:w-56 border border-slate-300 uppercase text-center">
                     Name
                   </th>
-                  <th className="py-4 px-6 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 border border-slate-300 uppercase text-center">
                     Department &amp; Year
                   </th>
-                  <th className="py-4 px-6 w-32 sm:w-40 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-24 sm:w-36 border border-slate-300 uppercase text-center">
                     Photo
                   </th>
                 </tr>
               </thead>
-              <tbody className="font-sans text-sm divide-y divide-slate-300">
+              <tbody className="font-sans text-xs sm:text-sm divide-y divide-slate-300">
                 {STUDENT_AMBASSADORS.map((student, index) => (
                   <tr
                     key={index}
                     className="hover:bg-slate-50 transition-colors duration-150"
                   >
-                    <td className="py-5 px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
                       {student.name}
                     </td>
-                    <td className="py-5 px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-center sm:text-left">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-center sm:text-left">
                       {student.description}
                     </td>
-                    <td className="py-4 px-6 border border-slate-300 align-middle text-center">
+                    <td className="py-3 sm:py-4 px-3.5 sm:px-6 border border-slate-300 align-middle text-center">
                       {student.photo ? (
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full overflow-hidden border-2 border-slate-200 shadow-sm bg-slate-50">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto rounded-full overflow-hidden border-2 border-slate-200 shadow-sm bg-slate-50">
                           <img
                             src={student.photo}
                             alt={student.name}
@@ -212,7 +212,7 @@ export default function TeamPage() {
                           />
                         </div>
                       ) : (
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
                           <span className="text-[10px] font-sans font-medium text-slate-400">Photo</span>
                         </div>
                       )}

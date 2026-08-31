@@ -117,38 +117,38 @@ const EVENT_TRAINING_SCHEDULES = [
 export default function ResearchAndTrainingPage() {
 
   return (
-    <div id="research-and-training-view" className="bg-[#F4F4F2] text-slate-800">
+    <div id="research-and-training-view" className="bg-[#F4F4F2] text-slate-800 w-full overflow-hidden">
       {/* SECTION 1: ONGOING PROJECTS */}
-      <section id="ongoing-projects" className="py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full">
-          <div className="mb-10">
-            <h2 className="text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
+      <section id="ongoing-projects" className="py-14 sm:py-20 md:py-24 bg-white border-b border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto">
+          <div className="mb-6 sm:mb-10">
+            <h2 className="text-2xl sm:text-[28px] md:text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
               Ongoing Projects
             </h2>
           </div>
 
-          <div className="overflow-x-auto border border-slate-300 bg-white">
-            <table className="w-full text-left border-collapse border border-slate-300">
+          <div className="overflow-x-auto border border-slate-300 bg-white rounded-lg shadow-sm w-full">
+            <table className="w-full text-left border-collapse border border-slate-300 min-w-[500px]">
               <thead>
-                <tr className="bg-[#831238] text-white font-sans text-sm font-semibold tracking-wider">
-                  <th className="py-4 px-6 w-44 sm:w-56 border border-slate-300 uppercase text-center">
+                <tr className="bg-[#831238] text-white font-sans text-xs sm:text-sm font-semibold tracking-wider">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-36 sm:w-48 border border-slate-300 uppercase text-center">
                     Title
                   </th>
-                  <th className="py-4 px-6 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 border border-slate-300 uppercase text-center">
                     Description
                   </th>
                 </tr>
               </thead>
-              <tbody className="font-sans text-sm divide-y divide-slate-300">
+              <tbody className="font-sans text-xs sm:text-sm divide-y divide-slate-300">
                 {ONGOING_PROJECTS.map((project, index) => (
                   <tr
                     key={index}
                     className="hover:bg-slate-50 transition-colors duration-150"
                   >
-                    <td className="py-5 px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
                       {project.title}
                     </td>
-                    <td className="py-5 px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-justify sm:text-left">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-justify sm:text-left">
                       {project.description}
                     </td>
                   </tr>
@@ -160,36 +160,36 @@ export default function ResearchAndTrainingPage() {
       </section>
 
       {/* SECTION 2: TRAINING PROGRAMS */}
-      <section id="training-programs" className="py-24 bg-[#F4F4F2] border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full">
-          <div className="mb-10">
-            <h2 className="text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
+      <section id="training-programs" className="py-14 sm:py-20 md:py-24 bg-[#F4F4F2] border-b border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto">
+          <div className="mb-6 sm:mb-10">
+            <h2 className="text-2xl sm:text-[28px] md:text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
               Training Programs
             </h2>
           </div>
 
-          <div className="overflow-x-auto border border-slate-300 bg-white">
-            <table className="w-full text-left border-collapse border border-slate-300">
+          <div className="overflow-x-auto border border-slate-300 bg-white rounded-lg shadow-sm w-full">
+            <table className="w-full text-left border-collapse border border-slate-300 min-w-[500px]">
               <thead>
-                <tr className="bg-[#831238] text-white font-sans text-sm font-semibold tracking-wider">
-                  <th className="py-4 px-6 w-44 sm:w-56 border border-slate-300 uppercase text-center">
+                <tr className="bg-[#831238] text-white font-sans text-xs sm:text-sm font-semibold tracking-wider">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-36 sm:w-48 border border-slate-300 uppercase text-center">
                     Title
                   </th>
-                  <th className="py-4 px-6 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 border border-slate-300 uppercase text-center">
                     Description
                   </th>
                 </tr>
               </thead>
-              <tbody className="font-sans text-sm divide-y divide-slate-300">
+              <tbody className="font-sans text-xs sm:text-sm divide-y divide-slate-300">
                 {TRAINING_PROGRAMS.map((program, index) => (
                   <tr
                     key={index}
                     className="hover:bg-slate-50 transition-colors duration-150"
                   >
-                    <td className="py-5 px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-nowrap">
                       {program.title}
                     </td>
-                    <td className="py-5 px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-justify sm:text-left">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-justify sm:text-left">
                       {program.description}
                     </td>
                   </tr>
@@ -201,48 +201,48 @@ export default function ResearchAndTrainingPage() {
       </section>
 
       {/* SECTION 3: EVENT & TRAINING SCHEDULES */}
-      <section id="event-training-schedules" className="py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full">
-          <div className="mb-10">
-            <h2 className="text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
+      <section id="event-training-schedules" className="py-14 sm:py-20 md:py-24 bg-white border-b border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto">
+          <div className="mb-6 sm:mb-10">
+            <h2 className="text-2xl sm:text-[28px] md:text-[30px] font-extrabold leading-[1.1] text-[#831238] tracking-tight">
               Event &amp; Training Schedules
             </h2>
           </div>
 
-          <div className="overflow-x-auto border border-slate-300 bg-white">
-            <table className="w-full text-left border-collapse border border-slate-300">
+          <div className="overflow-x-auto border border-slate-300 bg-white rounded-lg shadow-sm w-full">
+            <table className="w-full text-left border-collapse border border-slate-300 min-w-[650px]">
               <thead>
-                <tr className="bg-[#831238] text-white font-sans text-sm font-semibold tracking-wider">
-                  <th className="py-4 px-6 w-48 sm:w-56 border border-slate-300 uppercase text-center">
+                <tr className="bg-[#831238] text-white font-sans text-xs sm:text-sm font-semibold tracking-wider">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-40 sm:w-52 border border-slate-300 uppercase text-center">
                     Title
                   </th>
-                  <th className="py-4 px-6 min-w-[280px] border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 min-w-[220px] border border-slate-300 uppercase text-center">
                     Description
                   </th>
-                  <th className="py-4 px-6 w-44 sm:w-56 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-36 sm:w-48 border border-slate-300 uppercase text-center">
                     Target
                   </th>
-                  <th className="py-4 px-6 w-40 sm:w-48 border border-slate-300 uppercase text-center">
+                  <th className="py-3 sm:py-4 px-3.5 sm:px-6 w-32 sm:w-44 border border-slate-300 uppercase text-center">
                     Frequency
                   </th>
                 </tr>
               </thead>
-              <tbody className="font-sans text-sm divide-y divide-slate-300">
+              <tbody className="font-sans text-xs sm:text-sm divide-y divide-slate-300">
                 {EVENT_TRAINING_SCHEDULES.map((event, index) => (
                   <tr
                     key={index}
                     className="hover:bg-slate-50 transition-colors duration-150"
                   >
-                    <td className="py-5 px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-normal">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-semibold text-slate-900 border border-slate-300 align-middle text-center whitespace-normal">
                       {event.title}
                     </td>
-                    <td className="py-5 px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-justify sm:text-left">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 text-slate-700 border border-slate-300 align-middle leading-relaxed text-justify sm:text-left">
                       {event.description}
                     </td>
-                    <td className="py-5 px-6 font-medium text-slate-800 border border-slate-300 align-middle text-center">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-medium text-slate-800 border border-slate-300 align-middle text-center">
                       {event.target}
                     </td>
-                    <td className="py-5 px-6 font-medium text-slate-800 border border-slate-300 align-middle text-center">
+                    <td className="py-3.5 sm:py-5 px-3.5 sm:px-6 font-medium text-slate-800 border border-slate-300 align-middle text-center">
                       {event.frequency}
                     </td>
                   </tr>
@@ -254,21 +254,21 @@ export default function ResearchAndTrainingPage() {
       </section>
 
       {/* SECTION 4: OPERATIONAL HOURS / LAB SCHEDULE */}
-      <section id="operational-hours" className="py-24 bg-[#F4F4F2] border-t border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-7 space-y-8">
-            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
+      <section id="operational-hours" className="py-14 sm:py-20 md:py-24 bg-[#F4F4F2] border-t border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+            <h2 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] leading-[1.1] tracking-tight">
               Operational Hours
             </h2>
-            <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans text-justify">
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-sans text-justify">
               The Sathyabama AICTE IDEA Lab is open for students and faculty every day from 9:00 AM to 11:00 PM. The lab hours are flexible and can be extended based on the demand and requirements of students and faculty. During special events, competitions, hackathons, and intensive project development sessions, the lab remains accessible 24 hours a day, 7 days a week.
             </p>
           </div>
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-md bg-gradient-to-br from-[#831238] via-[#700d2e] to-[#550821] rounded-2xl p-6 sm:p-7 shadow-xl border border-white/15 backdrop-blur-md overflow-hidden relative">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
+            <div className="w-full max-w-md bg-gradient-to-br from-[#831238] via-[#700d2e] to-[#550821] rounded-2xl p-5 sm:p-7 shadow-xl border border-white/15 backdrop-blur-md overflow-hidden relative">
               <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/10 relative z-10">
+              <div className="flex items-center justify-between mb-4 sm:mb-5 pb-3 border-b border-white/10 relative z-10">
                 <span className="font-sans text-[10px] tracking-wider font-bold uppercase text-amber-300 bg-white/10 border border-white/10 px-2.5 py-1 rounded-md">
                   Lab Schedule
                 </span>
@@ -281,39 +281,39 @@ export default function ResearchAndTrainingPage() {
                 </div>
               </div>
 
-              <div className="space-y-3.5 relative z-10">
-                <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
-                  <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
+              <div className="space-y-3 sm:space-y-3.5 relative z-10">
+                <div className="flex items-center gap-3 sm:gap-3.5 p-2.5 sm:p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
                     <Globe className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-sans text-[11px] text-white/50 uppercase tracking-wider font-medium">Daily Hours</p>
-                    <p className="font-sans font-bold text-white text-sm sm:text-base tracking-tight">9:00 AM – 11:00 PM</p>
+                    <p className="font-sans text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider font-medium">Daily Hours</p>
+                    <p className="font-sans font-bold text-white text-xs sm:text-base tracking-tight">9:00 AM – 11:00 PM</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
-                  <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
+                <div className="flex items-center gap-3 sm:gap-3.5 p-2.5 sm:p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
                     <div>
-                      <p className="font-sans text-[11px] text-white/50 uppercase tracking-wider font-medium">Hackathons &amp; Events</p>
-                      <p className="font-sans font-bold text-white text-sm sm:text-base tracking-tight">24 / 7 Access</p>
+                      <p className="font-sans text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider font-medium">Hackathons &amp; Events</p>
+                      <p className="font-sans font-bold text-white text-xs sm:text-base tracking-tight">24 / 7 Access</p>
                     </div>
-                    <span className="text-[9px] font-sans font-bold uppercase tracking-wider bg-amber-400/20 border border-amber-400/30 text-amber-300 px-2 py-0.5 rounded-full shrink-0">
+                    <span className="text-[8px] sm:text-[9px] font-sans font-bold uppercase tracking-wider bg-amber-400/20 border border-amber-400/30 text-amber-300 px-2 py-0.5 rounded-full shrink-0">
                       Always On
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
-                  <div className="p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
+                <div className="flex items-center gap-3 sm:gap-3.5 p-2.5 sm:p-3 rounded-xl bg-white/[0.04] border border-white/5 hover:bg-white/[0.08] transition-colors">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-white/10 text-amber-300 shrink-0 border border-white/10">
                     <Users className="w-4 h-4" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-sans text-[11px] text-white/50 uppercase tracking-wider font-medium">Open To</p>
-                    <p className="font-sans font-bold text-white text-sm sm:text-base tracking-tight">All Students &amp; Faculty</p>
+                    <p className="font-sans text-[10px] sm:text-[11px] text-white/50 uppercase tracking-wider font-medium">Open To</p>
+                    <p className="font-sans font-bold text-white text-xs sm:text-base tracking-tight">All Students &amp; Faculty</p>
                   </div>
                 </div>
               </div>

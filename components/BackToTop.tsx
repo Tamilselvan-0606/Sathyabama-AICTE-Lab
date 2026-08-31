@@ -23,10 +23,10 @@ export default function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-8 right-8 z-40 w-12 h-12 flex items-center justify-center bg-slate-900/90 hover:bg-[#831238] text-white rounded-full border border-slate-800 shadow-2xl backdrop-blur-md transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95 group"
+      className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-40 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-slate-900/90 hover:bg-[#831238] text-white rounded-full border border-slate-800 shadow-2xl backdrop-blur-md transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95 group"
       aria-label="Back to top"
     >
-      <ChevronUp className="w-6 h-6 stroke-[3] transition-transform group-hover:-translate-y-0.5" />
+      <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3] transition-transform group-hover:-translate-y-0.5" />
     </button>
   );
 }

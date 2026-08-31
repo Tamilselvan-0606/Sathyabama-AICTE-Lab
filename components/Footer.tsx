@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
 
 const logoImg = '/Images/Home/logo.png';
 
@@ -16,11 +15,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="main-footer" className="bg-[#831238] text-white pt-20 pb-8 px-8 md:px-16 lg:px-24 w-full overflow-hidden relative font-sans border-t border-red-950">
-      <div className="w-full relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-16">
-          {/* Column 1: Brand & Connect (3 cols) */}
-          <div className="md:col-span-4 lg:col-span-3 space-y-6">
+    <footer id="main-footer" className="bg-[#831238] text-white pt-12 sm:pt-16 md:pt-20 pb-8 px-4 sm:px-8 md:px-16 lg:px-24 w-full overflow-hidden relative font-sans border-t border-red-950">
+      <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-12 sm:pb-16">
+          {/* Column 1: Brand & Connect */}
+          <div className="md:col-span-6 lg:col-span-3 space-y-6">
             <div className="flex items-center">
               <div className="h-[72px] w-auto">
                 <img src={logoImg} alt="AICTE IDEA Lab Logo" className="h-full w-auto object-contain" />
@@ -88,8 +87,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links (3 cols with whitespace-nowrap) */}
-          <div className="md:col-span-4 lg:col-span-3 space-y-6">
+          {/* Column 2: Quick Links */}
+          <div className="md:col-span-6 lg:col-span-3 space-y-6">
             <h4 className="font-sans font-bold text-sm sm:text-[15px] tracking-wider text-white uppercase mb-6">
               Quick Links
             </h4>
@@ -108,12 +107,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact Details (Horizontal Layout - 6 cols) */}
+          {/* Column 3: Contact Details (Horizontal Layout) */}
           <div className="md:col-span-12 lg:col-span-6 space-y-6">
             <h4 className="font-sans font-bold text-sm sm:text-[15px] tracking-wider text-white uppercase mb-6">
               Contact Details
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 text-sm font-sans text-white/90">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 text-sm font-sans text-white/90">
               {/* Contact Person 1 */}
               <div className="space-y-1.5 border-l-2 border-amber-400/80 pl-3.5 flex flex-col justify-between">
                 <div>
