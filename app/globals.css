@@ -8,10 +8,23 @@
   --font-mono: "Poppins", sans-serif;
 }
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+html,
 body {
   font-family: "Poppins", sans-serif !important;
   background-color: #F4F4F2;
   color: #0f172a;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
 }
 
 /* Enforce non-italic style globally across the site */

@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '@/lib/animations';
 import { FileText, ArrowRight, Download, X } from 'lucide-react';
 
+const facilitiesBanner = '/Images/Facilities/facilites-image-banner.jpg';
 const facilitiesImage1 = '/Images/Facilities/Facilities_image1.png';
 const facilitiesImage2 = '/Images/Facilities/Facilities_image2.png';
 const facilitiesImage3 = '/Images/Facilities/Facilities_image3.png';
@@ -91,40 +92,41 @@ export default function FacilitiesPage() {
   return (
     <div id="facilities-view" className="bg-[#F4F4F2] text-slate-800 w-full overflow-hidden">
       {/* SECTION 1: FACILITIES OVERVIEW */}
-      <section id="facilities-hero" className="relative py-24 bg-white border-b border-slate-200 px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <motion.div className="lg:col-span-7 space-y-4" variants={fadeLeft} initial="hidden" animate="visible">
-              <h1 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
+      <section id="facilities-hero" className="relative py-14 sm:py-20 md:py-24 bg-white border-b border-slate-200 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <motion.div className="lg:col-span-7 space-y-4" variants={fadeLeft} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+              <h1 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
                 Our Core Facilities
               </h1>
-              <div className="bg-[#F4F4F2] rounded-2xl border border-slate-200 hover:border-[#831238] p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-[#F4F4F2] rounded-2xl border border-slate-200 hover:border-[#831238] p-5 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="font-serif text-sm font-bold text-[#831238] bg-[#831238]/10 px-3 py-1 rounded-full">
+                  <div className="flex items-center justify-between mb-4 sm:mb-5">
+                    <span className="font-serif text-xs sm:text-sm font-bold text-[#831238] bg-[#831238]/10 px-3 py-1 rounded-full">
                       01
                     </span>
                   </div>
 
-                  <p className="text-slate-600 font-sans text-sm leading-relaxed text-justify">
+                  <p className="text-slate-600 font-sans text-xs sm:text-sm leading-relaxed text-justify">
                     The AICTE IDEA Lab is equipped with <strong className="text-slate-900 font-semibold">industry-standard machinery</strong> to support your journey from a digital concept to a physical prototype. Our advanced equipment spans both <strong className="text-slate-900 font-semibold">subtractive and additive manufacturing</strong>, along with essential <strong className="text-slate-900 font-semibold">electronics and testing systems</strong>.
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div className="lg:col-span-5 space-y-3" variants={fadeRight} initial="hidden" animate="visible">
-              <div className="p-4 rounded-xl bg-[#F4F4F2] border border-slate-200 shadow-sm flex items-center gap-3.5 hover:border-[#831238] transition-all">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#831238] shrink-0" />
-                <span className="font-sans font-semibold text-slate-800 text-sm">Subtractive &amp; CNC Milling Hub</span>
-              </div>
-              <div className="p-4 rounded-xl bg-[#F4F4F2] border border-slate-200 shadow-sm flex items-center gap-3.5 hover:border-[#831238] transition-all">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#831238] shrink-0" />
-                <span className="font-sans font-semibold text-slate-800 text-sm">Additive 3D Printing &amp; Scanning</span>
-              </div>
-              <div className="p-4 rounded-xl bg-[#F4F4F2] border border-slate-200 shadow-sm flex items-center gap-3.5 hover:border-[#831238] transition-all">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#831238] shrink-0" />
-                <span className="font-sans font-semibold text-slate-800 text-sm">Electronics &amp; IoT Testing Systems</span>
+            <motion.div
+              className="lg:col-span-5 relative w-full flex items-center justify-center"
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+            >
+              <div className="w-full h-auto overflow-hidden shadow-md">
+                <img
+                  src={facilitiesBanner}
+                  alt="AICTE IDEA Lab Facilities Overview"
+                  className="w-full h-auto object-contain block"
+                />
               </div>
             </motion.div>
           </div>
@@ -132,16 +134,16 @@ export default function FacilitiesPage() {
       </section>
 
       {/* SECTION 2: SUBTRACTIVE MANUFACTURING TOOLS */}
-      <section id="subtractive-tools" className="py-24 px-8 md:px-16 lg:px-24 w-full bg-[#F4F4F2]">
-        <div className="w-full space-y-12">
+      <section id="subtractive-tools" className="py-14 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full bg-[#F4F4F2]">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto space-y-8 sm:space-y-12">
           <div>
-            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
+            <h2 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
               Subtractive Manufacturing Tools
             </h2>
           </div>
 
           <motion.div
-            className="flex flex-col md:flex-row justify-center items-stretch gap-8 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6 sm:gap-8 w-full"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -151,10 +153,10 @@ export default function FacilitiesPage() {
               <motion.div
                 key={idx}
                 variants={staggerItem}
-                className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group w-full md:w-[calc(33.333%-1.35rem)]"
+                className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group w-full"
               >
                 <div>
-                  <div className="h-64 relative overflow-hidden bg-slate-900">
+                  <div className="h-52 sm:h-64 relative overflow-hidden bg-slate-900">
                     <img
                       src={tool.coverImage}
                       alt={tool.title}
@@ -162,27 +164,27 @@ export default function FacilitiesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="font-serif text-xl font-bold italic drop-shadow-md">
+                      <h3 className="font-serif text-lg sm:text-xl font-bold italic drop-shadow-md">
                         {tool.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="p-7 space-y-4">
+                  <div className="p-5 sm:p-7 space-y-4">
                     <div className="space-y-2">
-                      <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="font-sans text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
                         Description
                       </span>
-                      <p className="text-slate-700 font-sans text-sm leading-relaxed text-justify">
+                      <p className="text-slate-700 font-sans text-xs sm:text-sm leading-relaxed text-justify">
                         {tool.desc}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
+                    <div className="pt-3 border-t border-slate-100 flex items-center gap-2 flex-wrap">
                       <span className="font-sans text-xs font-bold text-slate-500">Contact Details:</span>
                       <a
                         href={`mailto:${tool.contact}`}
-                        className="text-[#831238] font-sans text-xs font-semibold hover:underline"
+                        className="text-[#831238] font-sans text-xs font-semibold hover:underline break-all"
                       >
                         {tool.contact}
                       </a>
@@ -190,7 +192,7 @@ export default function FacilitiesPage() {
                   </div>
                 </div>
 
-                <div className="p-7 pt-0">
+                <div className="p-5 sm:p-7 pt-0">
                   <button
                     onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
                     className="w-full py-3 px-4 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
@@ -206,16 +208,16 @@ export default function FacilitiesPage() {
       </section>
 
       {/* SECTION 3: ADVANCED 3D PRINTING SYSTEMS */}
-      <section id="advanced-3d-printing" className="py-24 bg-white px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full space-y-12">
+      <section id="advanced-3d-printing" className="py-14 sm:py-20 md:py-24 bg-white px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto space-y-8 sm:space-y-12">
           <div>
-            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
+            <h2 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
               Advanced 3D Printing Systems
             </h2>
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -228,7 +230,7 @@ export default function FacilitiesPage() {
                 className="bg-[#F4F4F2] rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  <div className="h-64 relative overflow-hidden bg-slate-900">
+                  <div className="h-52 sm:h-64 relative overflow-hidden bg-slate-900">
                     <img
                       src={tool.coverImage}
                       alt={tool.title}
@@ -236,27 +238,27 @@ export default function FacilitiesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="font-serif text-xl font-bold italic drop-shadow-md">
+                      <h3 className="font-serif text-lg sm:text-xl font-bold italic drop-shadow-md">
                         {tool.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="p-7 space-y-4">
+                  <div className="p-5 sm:p-7 space-y-4">
                     <div className="space-y-2">
-                      <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="font-sans text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
                         Description
                       </span>
-                      <p className="text-slate-700 font-sans text-sm leading-relaxed text-justify">
+                      <p className="text-slate-700 font-sans text-xs sm:text-sm leading-relaxed text-justify">
                         {tool.desc}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-200/60 flex items-center gap-2">
+                    <div className="pt-3 border-t border-slate-200/60 flex items-center gap-2 flex-wrap">
                       <span className="font-sans text-xs font-bold text-slate-500">Contact Details:</span>
                       <a
                         href={`mailto:${tool.contact}`}
-                        className="text-[#831238] font-sans text-xs font-semibold hover:underline"
+                        className="text-[#831238] font-sans text-xs font-semibold hover:underline break-all"
                       >
                         {tool.contact}
                       </a>
@@ -264,7 +266,7 @@ export default function FacilitiesPage() {
                   </div>
                 </div>
 
-                <div className="p-7 pt-0">
+                <div className="p-5 sm:p-7 pt-0">
                   <button
                     onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
                     className="w-full py-3 px-4 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
@@ -280,16 +282,16 @@ export default function FacilitiesPage() {
       </section>
 
       {/* SECTION 4: ELECTRONICS & SUPPORT EQUIPMENT */}
-      <section id="electronics-support" className="py-24 bg-[#EBEBE9] px-8 md:px-16 lg:px-24 w-full">
-        <div className="w-full space-y-12">
+      <section id="electronics-support" className="py-14 sm:py-20 md:py-24 bg-[#EBEBE9] px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto space-y-8 sm:space-y-12">
           <div>
-            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
+            <h2 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
               Electronics &amp; Support Equipment
             </h2>
           </div>
 
           <motion.div
-            className="flex flex-col md:flex-row justify-center items-stretch gap-8 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6 sm:gap-8 w-full"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -299,10 +301,10 @@ export default function FacilitiesPage() {
               <motion.div
                 key={idx}
                 variants={staggerItem}
-                className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group w-full md:w-[calc(33.333%-1.35rem)]"
+                className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col justify-between group w-full"
               >
                 <div>
-                  <div className="h-64 relative overflow-hidden bg-slate-900">
+                  <div className="h-52 sm:h-64 relative overflow-hidden bg-slate-900">
                     <img
                       src={tool.coverImage}
                       alt={tool.title}
@@ -310,27 +312,27 @@ export default function FacilitiesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="font-serif text-xl font-bold italic drop-shadow-md">
+                      <h3 className="font-serif text-lg sm:text-xl font-bold italic drop-shadow-md">
                         {tool.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="p-7 space-y-4">
+                  <div className="p-5 sm:p-7 space-y-4">
                     <div className="space-y-2">
-                      <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="font-sans text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
                         Description
                       </span>
-                      <p className="text-slate-700 font-sans text-sm leading-relaxed text-justify">
+                      <p className="text-slate-700 font-sans text-xs sm:text-sm leading-relaxed text-justify">
                         {tool.desc}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
+                    <div className="pt-3 border-t border-slate-100 flex items-center gap-2 flex-wrap">
                       <span className="font-sans text-xs font-bold text-slate-500">Contact Details:</span>
                       <a
                         href={`mailto:${tool.contact}`}
-                        className="text-[#831238] font-sans text-xs font-semibold hover:underline"
+                        className="text-[#831238] font-sans text-xs font-semibold hover:underline break-all"
                       >
                         {tool.contact}
                       </a>
@@ -338,7 +340,7 @@ export default function FacilitiesPage() {
                   </div>
                 </div>
 
-                <div className="p-7 pt-0">
+                <div className="p-5 sm:p-7 pt-0">
                   <button
                     onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
                     className="w-full py-3 px-4 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
@@ -354,27 +356,27 @@ export default function FacilitiesPage() {
       </section>
 
       {/* SECTION 5: MINOR EQUIPMENTS */}
-      <section id="minor-equipments" className="py-24 px-8 md:px-16 lg:px-24 w-full bg-white border-t border-slate-200">
-        <div className="w-full space-y-12">
+      <section id="minor-equipments" className="py-14 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 w-full bg-white border-t border-slate-200">
+        <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto space-y-8 sm:space-y-12">
           <div>
-            <h2 className="font-serif text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
+            <h2 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
               Minor Equipments
             </h2>
           </div>
 
           <motion.div
-            className="flex flex-col md:flex-row justify-center items-stretch gap-8 w-full"
+            className="flex flex-col md:flex-row justify-center items-stretch gap-6 sm:gap-8 w-full"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <div className="bg-[#F4F4F2] rounded-none border border-slate-200 p-8 shadow-sm hover:!outline-none hover:!border-slate-200 flex flex-col justify-between w-full md:w-2/3 lg:w-1/2">
+            <div className="bg-[#F4F4F2] rounded-none border border-slate-200 p-5 sm:p-8 shadow-sm hover:!outline-none hover:!border-slate-200 flex flex-col justify-between w-full md:w-4/5 lg:w-2/3 max-w-3xl mx-auto">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-[#831238]/10 text-[#831238] flex items-center justify-center font-sans font-bold text-xs">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#831238]/10 text-[#831238] flex items-center justify-center font-sans font-bold text-xs">
                   PDF
                 </div>
-                <p className="text-slate-700 font-sans text-sm md:text-base leading-relaxed">
+                <p className="text-slate-700 font-sans text-xs sm:text-sm md:text-base leading-relaxed">
                   Click below to open and view the comprehensive documentation and catalog of minor equipment available at Sathyabama AICTE IDEA Lab.
                 </p>
               </div>
@@ -384,7 +386,7 @@ export default function FacilitiesPage() {
                   href="/Pdf/Equipmen list( Minor equipment).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-6 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
+                  className="py-3 px-4 sm:px-6 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
                 >
                   <FileText className="w-4 h-4" />
                   <span>View Minor Equipments (PDF)</span>
@@ -398,30 +400,30 @@ export default function FacilitiesPage() {
 
       {/* MANUAL PREVIEW & DOWNLOAD MODAL */}
       {activeManual && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-xl w-full flex flex-col shadow-2xl relative max-h-[90vh] overflow-hidden">
-            <div className="flex items-center justify-between border-b border-slate-100 p-5 shrink-0">
-              <h3 className="font-serif text-xl font-bold italic text-slate-900">{activeManual.title}</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl max-w-xl w-full flex flex-col shadow-2xl relative max-h-[92vh] overflow-hidden">
+            <div className="flex items-center justify-between border-b border-slate-100 p-4 sm:p-5 shrink-0">
+              <h3 className="font-serif text-lg sm:text-xl font-bold italic text-slate-900 truncate pr-2">{activeManual.title}</h3>
               <button
                 onClick={() => setActiveManual(null)}
-                className="p-2 rounded-full hover:bg-slate-100 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+                className="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer shrink-0"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-4 flex-1 flex items-center justify-center">
+            <div className="p-3 sm:p-4 flex-1 flex items-center justify-center overflow-auto max-h-[60vh]">
               <img
                 src={activeManual.image}
                 alt={`${activeManual.title} Manual Sheet`}
-                className="w-full h-[320px] sm:h-[350px] object-contain block"
+                className="w-full max-h-[50vh] sm:max-h-[58vh] object-contain block"
               />
             </div>
 
-            <div className="flex items-center justify-end gap-3 p-4 px-6 border-t border-slate-100 bg-white shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-2.5 sm:gap-3 p-4 px-5 sm:px-6 border-t border-slate-100 bg-white shrink-0">
               <button
                 onClick={() => setActiveManual(null)}
-                className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all cursor-pointer"
+                className="px-4 py-2.5 rounded-lg border border-slate-200 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all cursor-pointer text-center"
               >
                 Close
               </button>
@@ -430,7 +432,7 @@ export default function FacilitiesPage() {
                 download={`${activeManual.title.replace(/\s+/g, '_')}_Manual.jpg`}
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2 rounded-lg bg-[#831238] hover:bg-[#6a0f2d] text-white text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer shadow-sm"
+                className="px-5 py-2.5 rounded-lg bg-[#831238] hover:bg-[#6a0f2d] text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm text-center"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Image</span>
