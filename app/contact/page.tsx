@@ -90,18 +90,18 @@ export default function ContactPage() {
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <div>
                     <h3 className="text-base sm:text-lg font-serif font-extrabold italic text-[#831238] group-hover:text-[#620a27] transition-colors">
-                      Dr. Brijitta J
+                      Dr. S. Preethi
                     </h3>
                     <div className="inline-flex items-center gap-1.5 mt-1 px-2.5 py-0.5 bg-[#831238]/10 text-[#831238] text-xs font-bold font-sans rounded">
                       <User className="w-3 h-3 text-[#831238]" />
-                      <span>Professor</span>
+                      <span>Coordinator | Associate Professor</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-1.5 text-slate-600 font-sans text-xs sm:text-sm mt-3 leading-relaxed">
                   <p className="text-slate-700 font-medium">
-                    Centre for Nanoscience and Nanotechnology
+                    Centre for AICTE Idea lab
                   </p>
                   <div className="flex items-start gap-2">
                     <Building2 className="w-3.5 h-3.5 text-slate-400 mt-0.5 shrink-0" />
@@ -118,10 +118,10 @@ export default function ContactPage() {
                     Email:
                   </span>
                   <a
-                    href="mailto:cnsnt@sathyabama.ac.in"
+                    href="mailto:preethi.s.irc@sathyabama.ac.in"
                     className="text-[#831238] text-xs sm:text-sm font-bold hover:underline break-all"
                   >
-                    cnsnt@sathyabama.ac.in
+                    preethi.s.irc@sathyabama.ac.in
                   </a>
                 </div>
               </div>

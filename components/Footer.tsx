@@ -142,13 +142,13 @@ export default function Footer() {
               <div className="space-y-1.5 border-l-2 border-amber-400/80 pl-3.5 flex flex-col justify-between">
                 <div>
                   <div className="font-semibold text-white text-[15px]">
-                    Dr. Brijitta J
+                    Dr. S. Preethi
                   </div>
                   <div className="text-amber-300 text-xs font-medium uppercase tracking-wide mt-0.5">
-                    Professor
+                    Coordinator | Associate Professor
                   </div>
                   <div className="text-white/80 text-xs leading-relaxed font-normal mt-2">
-                    Centre for Nanoscience and Nanotechnology<br />
+                    Centre for AICTE Idea lab<br />
                     Sathyabama Institute of Science and Technology<br />
                     Chennai – 600 119, Tamil Nadu, India
                   </div>
@@ -156,10 +156,10 @@ export default function Footer() {
                 <div className="pt-2 flex items-center gap-1.5 flex-wrap">
                   <span className="text-xs font-medium text-white/80">Email:</span>
                   <a
-                    href="mailto:cnsnt@sathyabama.ac.in"
+                    href="mailto:preethi.s.irc@sathyabama.ac.in"
                     className="text-amber-300 hover:underline text-xs sm:text-sm font-medium break-all"
                   >
-                    cnsnt@sathyabama.ac.in
+                    preethi.s.irc@sathyabama.ac.in
                   </a>
                 </div>
               </div>
