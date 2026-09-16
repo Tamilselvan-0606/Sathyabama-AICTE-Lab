@@ -55,7 +55,7 @@ export default function HomePage() {
                 Explore Our Facilities <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfwb7b8WzLR8hh3suyVD9DWKouidNcnxRBZ9yJ_9BHVt7m0lA/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSemCsgCo9YCmG1WVnKMh2eNmbnv7OCTCh8UaMcrGcBm8L2EgQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-[#831238] text-[#831238] text-xs sm:text-sm font-sans font-medium hover:bg-[#831238]/5 hover:border-[#620a27] transition-colors rounded-lg cursor-pointer text-center"
@@ -190,12 +190,14 @@ export default function HomePage() {
               Have an idea for a smart agriculture system, an automated healthcare monitor, or a next-generation robotic arm? Bring it here! We actively encourage students to utilize our machineries and IoT equipment to make their own projects. Build solutions that address real-world societal and industrial challenges, and take your first step toward entrepreneurship and technology commercialization.
             </p>
             <div>
-              <Link
-                href="/research-and-training"
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSemCsgCo9YCmG1WVnKMh2eNmbnv7OCTCh8UaMcrGcBm8L2EgQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-3.5 sm:py-4 bg-[#831238] hover:bg-[#620a27] text-white text-xs sm:text-sm font-sans font-medium shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 Join the Innovation Hub <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="lg:col-span-5 relative w-full">

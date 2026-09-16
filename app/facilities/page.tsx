@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnce } from '@/lib/animations';
 import { FileText, ArrowRight, Download, X } from 'lucide-react';
 
-const facilitiesBanner = '/Images/Facilities/facilites-image-banner.jpg';
+const facilitiesBanner = '/Images/Facilities/Facilities-banner-image-new.png';
 const facilitiesImage1 = '/Images/Facilities/Facilities_image1.png';
 const facilitiesImage2 = '/Images/Facilities/Facilities_image2.png';
 const facilitiesImage3 = '/Images/Facilities/Facilities_image3.png';

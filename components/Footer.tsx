@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="md:col-span-6 lg:col-span-3 space-y-6">
+          <div className="md:col-span-4 lg:col-span-2 space-y-6">
             <h4 className="font-sans font-bold text-sm sm:text-[15px] tracking-wider text-white uppercase mb-6">
               Quick Links
             </h4>
@@ -108,11 +108,11 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Contact Details (Horizontal Layout) */}
-          <div className="md:col-span-12 lg:col-span-6 space-y-6">
+          <div className="md:col-span-8 lg:col-span-7 space-y-6">
             <h4 className="font-sans font-bold text-sm sm:text-[15px] tracking-wider text-white uppercase mb-6">
               Contact Details
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 text-sm font-sans text-white/90">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8 text-sm font-sans text-white/90">
               {/* Contact Person 1 */}
               <div className="space-y-1.5 border-l-2 border-amber-400/80 pl-3.5 flex flex-col justify-between">
                 <div>
@@ -160,6 +160,32 @@ export default function Footer() {
                     className="text-amber-300 hover:underline text-xs sm:text-sm font-medium break-all"
                   >
                     preethi.s.irc@sathyabama.ac.in
+                  </a>
+                </div>
+              </div>
+
+              {/* Contact Person 3 */}
+              <div className="space-y-1.5 border-l-2 border-amber-400/80 pl-3.5 flex flex-col justify-between">
+                <div>
+                  <div className="font-semibold text-white text-[15px]">
+                    Dr. Kathiravan S
+                  </div>
+                  <div className="text-amber-300 text-xs font-medium uppercase tracking-wide mt-0.5">
+                    Co-Coordinator | Assistant Professor (Research)
+                  </div>
+                  <div className="text-white/80 text-xs leading-relaxed font-normal mt-2">
+                    Centre for AICTE Idea lab<br />
+                    Sathyabama Institute of Science and Technology<br />
+                    Chennai – 600 119, Tamil Nadu, India
+                  </div>
+                </div>
+                <div className="pt-2 flex items-center gap-1.5 flex-wrap">
+                  <span className="text-xs font-medium text-white/80">Email:</span>
+                  <a
+                    href="mailto:kathiravan.s.irc@sathyabama.ac.in"
+                    className="text-amber-300 hover:underline text-xs sm:text-sm font-medium break-all"
+                  >
+                    kathiravan.s.irc@sathyabama.ac.in
                   </a>
                 </div>
               </div>
