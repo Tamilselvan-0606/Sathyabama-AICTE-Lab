@@ -6,23 +6,28 @@ import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnc
 import { FileText, ArrowRight, Download, X } from 'lucide-react';
 
 const facilitiesBanner = '/Images/Facilities/Facilities-banner-image-new.png';
-const facilitiesImage1 = '/Images/Facilities/Facilities_image1.png';
-const facilitiesImage2 = '/Images/Facilities/Facilities_image2.png';
-const facilitiesImage3 = '/Images/Facilities/Facilities_image3.png';
-const facilitiesImage4 = '/Images/Facilities/Facilities_image4.png';
-const facilitiesImage5 = '/Images/Facilities/Facilities_image5.png';
-const facilitiesImage6 = '/Images/Facilities/Facilities_image6.png';
-const facilitiesImage7 = '/Images/Facilities/Facilities_image7.png';
-const facilitiesImage8 = '/Images/Facilities/Facilities_image8.jpg';
-const facilitiesImage9 = '/Images/Facilities/Facilities_image9.jpg';
-const facilitiesImage11 = '/Images/Facilities/Facilities_image11.jpg';
-const facilitiesImage17 = '/Images/Facilities/Facilities_image17.jpg';
-const facilitiesStratasysF370 = '/Images/Facilities/facilities _stratasys f370.jpg';
-const facilitiesMakerbotZ18 = '/Images/Facilities/facilities_image_makerbot z18.png';
-const facilitiesReplicatorPlus = '/Images/Facilities/facilities_replicator +.png';
+const facilitiesCo2LaserCover = '/Images/Facilities/co2 laser cutter.jpg';
+const facilitiesCncMillingCover = '/Images/Facilities/3-axis cnc milling.jpg';
+const facilitiesStratasysF370Cover = '/Images/Facilities/stratasys f370.jpeg';
+const facilitiesMakerbotZ18Cover = '/Images/Facilities/makerbot replicator z18.jpeg';
+const facilitiesMakerbotReplicatorPlusCover = '/Images/Facilities/makerbot replicator +.jpeg';
+const facilitiesSignalGeneratorCover = '/Images/Facilities/signal generator.jpeg';
+const facilitiesHpPrinterCover = '/Images/Facilities/hp printer.jpeg';
+const facilitiesCo2LaserManual = '/Images/Facilities/CO2 Laser cutter Manual.jpeg';
+const facilitiesCncMillingManual = '/Images/Facilities/3-axis cnc milling manual.png';
+const facilitiesSignalGeneratorManual = '/Images/Facilities/Facilities_image11.jpg';
+const facilitiesHpPrinterManual = '/Images/Facilities/Printer manual.jpeg';
+const facilitiesStratasysF370Manual = '/Images/Facilities/F370 Manual .png';
+const facilitiesMakerbotZ18Manual = '/Images/Facilities/Z18 Manual .png';
+const facilitiesReplicatorPlusManual = '/Images/Facilities/Replicator Manual .png';
 
 export default function FacilitiesPage() {
-  const [activeManual, setActiveManual] = useState<{ title: string; image: string; desc: string } | null>(null);
+  const [activeModal, setActiveModal] = useState<{
+    title: string;
+    coverImage: string;
+    manualImage: string;
+    showingManual: boolean;
+  } | null>(null);
 
   const subtractiveTools = [
     {
@@ -30,16 +35,16 @@ export default function FacilitiesPage() {
       type: 'Subtractive Fabrication',
       desc: 'This is a high-precision CO2 laser cutter and engraver. Engineered for subtractive manufacturing across diverse non-metallic substrates.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage1,
-      manualImage: facilitiesImage8,
+      coverImage: facilitiesCo2LaserCover,
+      manualImage: facilitiesCo2LaserManual,
     },
     {
       title: '3-Axis CNC Milling',
       type: 'Subtractive Machining',
       desc: 'This machine is an industrial-grade 3-Axis CNC milling and routing system for automated carving and component prototyping. A 3-Axis CNC router is a computer controlled system used for subtractive manufacturing, it functions by removing material from a solid workpiece to create 2-D or 3-D shapes.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage2,
-      manualImage: facilitiesImage9,
+      coverImage: facilitiesCncMillingCover,
+      manualImage: facilitiesCncMillingManual,
     },
   ];
 
@@ -49,24 +54,24 @@ export default function FacilitiesPage() {
       type: 'Industrial Additive System',
       desc: 'Stratasys F370 is a professional 3-D printer specializing in polymer additive manufacturing, PolyJet, P3 and SAF. Its generous build volume and multi-material capacity allow for seamless fabrication.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage3,
-      manualImage: facilitiesStratasysF370,
+      coverImage: facilitiesStratasysF370Cover,
+      manualImage: facilitiesStratasysF370Manual,
     },
     {
       title: 'MakerBot Replicator Z18',
       type: 'Large-Volume 3D Printer',
       desc: 'MakerBot Replicator Z18 is an enclosed 3-D printer with massive build volume and heated chamber. It enables the creation of massive, high-accuracy prototypes and delivers automated print monitoring.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage4,
-      manualImage: facilitiesMakerbotZ18,
+      coverImage: facilitiesMakerbotZ18Cover,
+      manualImage: facilitiesMakerbotZ18Manual,
     },
     {
       title: 'MakerBot Replicator +',
       type: 'Desktop Rapid Prototyper',
       desc: 'The MakerBot Replicator + serves as a rapid prototyping platform utilizing Fused Deposition Modeling (FDM) technology to translate digital CAD models into precise physical iterations.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage5,
-      manualImage: facilitiesReplicatorPlus,
+      coverImage: facilitiesMakerbotReplicatorPlusCover,
+      manualImage: facilitiesReplicatorPlusManual,
     },
   ];
 
@@ -76,16 +81,16 @@ export default function FacilitiesPage() {
       type: 'Electronic Test Instrument',
       desc: 'A signal generator is an electronic test instrument that synthesizes electrical waveforms with controllable frequency, amplitude and modulation characteristics.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage6,
-      manualImage: facilitiesImage11,
+      coverImage: facilitiesSignalGeneratorCover,
+      manualImage: facilitiesSignalGeneratorManual,
     },
     {
       title: 'HP Laser Printer',
       type: 'Support & Documentation Equipment',
       desc: 'HP Laser Printer is engineered for large scale workloads. It delivers high speed, vibrant colour and easily integrates into networks to support continuous operations.',
       contact: 'aciteidealab@sathyabama.ac.in',
-      coverImage: facilitiesImage7,
-      manualImage: facilitiesImage17,
+      coverImage: facilitiesHpPrinterCover,
+      manualImage: facilitiesHpPrinterManual,
     },
   ];
 
@@ -99,7 +104,7 @@ export default function FacilitiesPage() {
               <h1 className="font-serif text-2xl sm:text-[28px] md:text-[30px] font-extrabold italic text-[#831238] tracking-tight leading-tight">
                 Our Core Facilities
               </h1>
-              <div className="bg-[#F4F4F2] rounded-2xl border border-slate-200 hover:border-[#831238] p-5 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-[#F4F4F2] rounded-2xl border border-slate-200 p-5 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-4 sm:mb-5">
                     <span className="font-serif text-xs sm:text-sm font-bold text-[#831238] bg-[#831238]/10 px-3 py-1 rounded-full">
@@ -194,7 +199,14 @@ export default function FacilitiesPage() {
 
                 <div className="p-5 sm:p-7 pt-0">
                   <button
-                    onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
+                    onClick={() =>
+                      setActiveModal({
+                        title: tool.title,
+                        coverImage: tool.coverImage,
+                        manualImage: tool.manualImage,
+                        showingManual: false,
+                      })
+                    }
                     className="w-full py-3 px-4 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
                   >
                     <span>View Image</span>
@@ -268,7 +280,14 @@ export default function FacilitiesPage() {
 
                 <div className="p-5 sm:p-7 pt-0">
                   <button
-                    onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
+                    onClick={() =>
+                      setActiveModal({
+                        title: tool.title,
+                        coverImage: tool.coverImage,
+                        manualImage: tool.manualImage,
+                        showingManual: false,
+                      })
+                    }
                     className="w-full py-3 px-4 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
                   >
                     <span>View Image</span>
@@ -342,7 +361,14 @@ export default function FacilitiesPage() {
 
                 <div className="p-5 sm:p-7 pt-0">
                   <button
-                    onClick={() => setActiveManual({ title: tool.title, image: tool.manualImage, desc: tool.desc })}
+                    onClick={() =>
+                      setActiveModal({
+                        title: tool.title,
+                        coverImage: tool.coverImage,
+                        manualImage: tool.manualImage,
+                        showingManual: false,
+                      })
+                    }
                     className="w-full py-3 px-4 rounded-xl bg-[#831238] hover:bg-[#6a0f2d] text-white font-sans text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow"
                   >
                     <span>View Image</span>
@@ -398,45 +424,60 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* MANUAL PREVIEW & DOWNLOAD MODAL */}
-      {activeManual && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-xl w-full flex flex-col shadow-2xl relative max-h-[92vh] overflow-hidden">
+      {/* IMAGE PREVIEW & MANUAL MODAL */}
+      {activeModal && (
+        <div
+          onClick={() => setActiveModal(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-sm"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl max-w-xl sm:max-w-2xl w-full flex flex-col shadow-2xl relative max-h-[95vh] overflow-hidden"
+          >
             <div className="flex items-center justify-between border-b border-slate-100 p-4 sm:p-5 shrink-0">
-              <h3 className="font-serif text-lg sm:text-xl font-bold italic text-slate-900 truncate pr-2">{activeManual.title}</h3>
+              <h3 className="font-serif text-lg sm:text-xl font-bold italic text-slate-900 truncate pr-2">
+                {activeModal.title} {activeModal.showingManual ? '(Manual)' : ''}
+              </h3>
               <button
-                onClick={() => setActiveManual(null)}
+                onClick={() => setActiveModal(null)}
                 className="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer shrink-0"
+                title="Close"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-3 sm:p-4 flex-1 flex items-center justify-center overflow-auto max-h-[60vh]">
+            <div className="p-3 sm:p-4 flex-1 flex items-center justify-center overflow-auto max-h-[78vh] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               <img
-                src={activeManual.image}
-                alt={`${activeManual.title} Manual Sheet`}
-                className="w-full max-h-[50vh] sm:max-h-[58vh] object-contain block"
+                src={activeModal.showingManual ? activeModal.manualImage : activeModal.coverImage}
+                alt={`${activeModal.title} ${activeModal.showingManual ? 'Manual Sheet' : 'Image'}`}
+                className="w-full max-h-[68vh] sm:max-h-[75vh] object-contain block"
               />
             </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-2.5 sm:gap-3 p-4 px-5 sm:px-6 border-t border-slate-100 bg-white shrink-0">
-              <button
-                onClick={() => setActiveManual(null)}
-                className="px-4 py-2.5 rounded-lg border border-slate-200 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all cursor-pointer text-center"
-              >
-                Close
-              </button>
-              <a
-                href={activeManual.image}
-                download={`${activeManual.title.replace(/\s+/g, '_')}_Manual.jpg`}
-                target="_blank"
-                rel="noreferrer"
-                className="px-5 py-2.5 rounded-lg bg-[#831238] hover:bg-[#6a0f2d] text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm text-center"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download Image</span>
-              </a>
+              {activeModal.showingManual ? (
+                <a
+                  href={activeModal.manualImage}
+                  download={`${activeModal.title.replace(/\s+/g, '_')}_Manual.jpg`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-5 py-2.5 rounded-lg bg-[#831238] hover:bg-[#6a0f2d] text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm text-center"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Image</span>
+                </a>
+              ) : (
+                <button
+                  onClick={() =>
+                    setActiveModal((prev) => (prev ? { ...prev, showingManual: true } : null))
+                  }
+                  className="px-5 py-2.5 rounded-lg bg-[#831238] hover:bg-[#6a0f2d] text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm text-center"
+                >
+                  <span>View Manual Image</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              )}
             </div>
           </div>
         </div>
