@@ -6,20 +6,20 @@ import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerItem, viewportOnc
 import { FileText, ArrowRight, Download, X } from 'lucide-react';
 
 const facilitiesBanner = '/Images/Facilities/Facilities-banner-image-new.png';
-const facilitiesCo2LaserCover = '/Images/Facilities/co2 laser cutter.jpg';
-const facilitiesCncMillingCover = '/Images/Facilities/3-axis cnc milling.jpg';
-const facilitiesStratasysF370Cover = '/Images/Facilities/stratasys f370.jpeg';
-const facilitiesMakerbotZ18Cover = '/Images/Facilities/makerbot replicator z18.jpeg';
-const facilitiesMakerbotReplicatorPlusCover = '/Images/Facilities/makerbot replicator +.jpeg';
-const facilitiesSignalGeneratorCover = '/Images/Facilities/signal generator.jpeg';
-const facilitiesHpPrinterCover = '/Images/Facilities/hp printer.jpeg';
-const facilitiesCo2LaserManual = '/Images/Facilities/CO2 Laser cutter Manual.jpeg';
-const facilitiesCncMillingManual = '/Images/Facilities/3-axis cnc milling manual.png';
-const facilitiesSignalGeneratorManual = '/Images/Facilities/Facilities_image11.jpg';
-const facilitiesHpPrinterManual = '/Images/Facilities/Printer manual.jpeg';
-const facilitiesStratasysF370Manual = '/Images/Facilities/F370 Manual .png';
-const facilitiesMakerbotZ18Manual = '/Images/Facilities/Z18 Manual .png';
-const facilitiesReplicatorPlusManual = '/Images/Facilities/Replicator Manual .png';
+const facilitiesCo2LaserCover = '/Images/Facilities/co2-laser-cutter.jpg';
+const facilitiesCncMillingCover = '/Images/Facilities/3-axis-cnc-milling.jpg';
+const facilitiesStratasysF370Cover = '/Images/Facilities/stratasys-f370.jpeg';
+const facilitiesMakerbotZ18Cover = '/Images/Facilities/makerbot-replicator-z18.jpeg';
+const facilitiesMakerbotReplicatorPlusCover = '/Images/Facilities/makerbot-replicator-plus.jpeg';
+const facilitiesSignalGeneratorCover = '/Images/Facilities/signal-generator.jpeg';
+const facilitiesHpPrinterCover = '/Images/Facilities/hp-printer.jpeg';
+const facilitiesCo2LaserManual = '/Images/Facilities/co2-laser-cutter-manual.jpeg';
+const facilitiesCncMillingManual = '/Images/Facilities/3-axis-cnc-milling-manual.png';
+const facilitiesSignalGeneratorManual = '/Images/Facilities/signal-generator-manual.jpg';
+const facilitiesHpPrinterManual = '/Images/Facilities/printer-manual.jpeg';
+const facilitiesStratasysF370Manual = '/Images/Facilities/f370-manual.png';
+const facilitiesMakerbotZ18Manual = '/Images/Facilities/z18-manual.png';
+const facilitiesReplicatorPlusManual = '/Images/Facilities/replicator-manual.png';
 
 export default function FacilitiesPage() {
   const [activeModal, setActiveModal] = useState<{
