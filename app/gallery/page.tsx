@@ -9,24 +9,35 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-const galleryImages = [
-  { id: 1, src: '/Images/Gallery/Gallery_image1.jpg' },
-  { id: 2, src: '/Images/Gallery/Gallery_image2.jpg' },
-  { id: 3, src: '/Images/Gallery/Gallery_image3.jpg' },
-  { id: 4, src: '/Images/Gallery/Gallery_image4.png' },
-  { id: 5, src: '/Images/Gallery/Gallery_image5.jpg' },
-  { id: 6, src: '/Images/Gallery/Gallery_image6.png' },
-  { id: 7, src: '/Images/Gallery/Gallery_image7.jpg' },
-  { id: 8, src: '/Images/Gallery/IMG_0857.jpg' },
-  { id: 9, src: '/Images/Gallery/IMG_0858.JPG' },
-  { id: 10, src: '/Images/Gallery/IMG_0859.JPG' },
-  { id: 11, src: '/Images/Gallery/IMG_0920.jpg' },
-  { id: 12, src: '/Images/Gallery/IMG_2949.jpg' },
-  { id: 13, src: '/Images/Gallery/IMG_3039.JPEG' },
-  { id: 14, src: '/Images/Gallery/IMG_4359.JPG' },
-  { id: 15, src: '/Images/Gallery/IMG_4405.JPG' },
+// Latest uploaded images will appear first
+const rawGalleryImages = [
+  { id: 24, src: '/Images/Gallery/Gallery_image_15.png' },
+  { id: 23, src: '/Images/Gallery/Gallery_image_14.png' },
+  { id: 22, src: '/Images/Gallery/Gallery_image_13.jpeg' },
+  { id: 21, src: '/Images/Gallery/Gallery_image_12.jpeg' },
+  { id: 20, src: '/Images/Gallery/Gallery_image_11.jpeg' },
+  { id: 19, src: '/Images/Gallery/Gallery_image_10.jpeg' },
+  { id: 18, src: '/Images/Gallery/Gallery_image_9.jpeg' },
+  { id: 17, src: '/Images/Gallery/Gallery_image_8.jpg' },
   { id: 16, src: '/Images/Gallery/IMG_4418.JPG' },
+  { id: 15, src: '/Images/Gallery/IMG_4405.JPG' },
+  { id: 14, src: '/Images/Gallery/IMG_4359.JPG' },
+  { id: 13, src: '/Images/Gallery/IMG_3039.JPEG' },
+  { id: 12, src: '/Images/Gallery/IMG_2949.jpg' },
+  { id: 11, src: '/Images/Gallery/IMG_0920.jpg' },
+  { id: 10, src: '/Images/Gallery/IMG_0859.JPG' },
+  { id: 9, src: '/Images/Gallery/IMG_0858.JPG' },
+  { id: 8, src: '/Images/Gallery/IMG_0857.jpg' },
+  { id: 7, src: '/Images/Gallery/Gallery_image7.jpg' },
+  { id: 6, src: '/Images/Gallery/Gallery_image6.png' },
+  { id: 5, src: '/Images/Gallery/Gallery_image5.jpg' },
+  { id: 4, src: '/Images/Gallery/Gallery_image4.png' },
+  { id: 3, src: '/Images/Gallery/Gallery_image3.jpg' },
+  { id: 2, src: '/Images/Gallery/Gallery_image2.jpg' },
+  { id: 1, src: '/Images/Gallery/Gallery_image1.jpg' },
 ];
+
+const galleryImages = rawGalleryImages;
 
 export default function GalleryPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
