@@ -120,7 +120,7 @@ export default function Footer() {
                     Dr. T. Sasipraba
                   </div>
                   <div className="text-amber-300 text-xs font-medium uppercase tracking-wide mt-0.5">
-                    Director Innovation
+                    Chief Coordinator | Director Innovation
                   </div>
                   <div className="text-white/80 text-xs leading-relaxed font-normal mt-2">
                     Sathyabama Institute of Science and Technology<br />

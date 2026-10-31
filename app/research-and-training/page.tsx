@@ -33,6 +33,16 @@ const ONGOING_PROJECTS = [
     description:
       'Design and Development of Modular 3D Printed Fixtures and Jigs for Manufacturing Applications guiding by Dr Azhagar Samy P',
   },
+  {
+    title: 'Project 6',
+    description:
+      'Development of an AI-powered autonomous mine rescue rover for human detection, obstacle avoidance, and environmental monitoring.',
+  },
+  {
+    title: 'Project 7',
+    description:
+      'Development of an IoT-based automatic attendance system using RFID to automatically record and manage attendance data securely in the cloud.',
+  },
 ];
 
 const TRAINING_PROGRAMS = [
@@ -40,6 +50,31 @@ const TRAINING_PROGRAMS = [
     title: 'Training Program 1',
     description:
       'Dr Kathiravan S and Dr Mohan Kumar conducted One Day Orientation Program on Additive & Subtractive Manufacturing sponsored by SATHYABAMA AICTE IDEA Lab ON 10th April 2026 at SATHYABAMA AICTE IDEA Lab, Sathyabama Institute of Science and Technology Chennai.',
+  },
+  {
+    title: 'Training Program 2',
+    description:
+      '6-day skill development program has been conducted for external participants on topics like Additive & Subtractive manufacturing, 3-D Printing, Laser cutting, etc., by our SATHYABAMA AICTE IDEA LAB from 7/9/2026 to 12/09/26 at SATHYABAMA AICTE IDEA LAB, Sathyabama Institute of Science and Technology, Chennai.',
+  },
+  {
+    title: 'Training Program 3',
+    description:
+      'AICTE IDEA LAB Coordinators conducted a 2-days Awareness Workshop for Industry Persons, on topics like Additive manufacturing and Subtractive manufacturing, laser cutting, 3d printing, Handling milling machines etc.,',
+  },
+  {
+    title: 'Training Program 4',
+    description:
+      'Innovation Ideation Workshop- The workshop provided hands on experience to the participants with a fundamental understanding of Microcontroller coding and firmware development, Smart sensor interfacing and cloud connectivity 3D printing, and Internet of Things (IoT) technologies and PCB Fabrication.',
+  },
+  {
+    title: 'Training Program 5',
+    description:
+      '12 Day Skilling program on Welding, Subtractive and Additive Manufacturing, conducted in SATHYABAMA AICTE IDEA LAB to Develop practical skills in using digital fabrication tools, including CO₂ laser cutters and 3D printers. conducted from 30-09-2026 to 14-10-2026 at SATHYABAMA AICTE IDEA LAB, Sathyabama Institute of Science and Technology, Chennai.',
+  },
+  {
+    title: 'Training Program 6',
+    description:
+      '3-days Ideation Workshop to learn the fundamentals of 3-D printing, Additive manufacturing and IOT , conducted on 26/10/2026 to 28/10/2026 at SATHYABAMA AICTE IDEA LAB, Sathyabama Institute of Science and Technology, Chennai.',
   },
 ];
 

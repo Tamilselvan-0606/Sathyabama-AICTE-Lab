@@ -56,7 +56,7 @@ export default function ContactPage() {
                     </h3>
                     <div className="inline-flex items-center gap-1.5 mt-1 px-2.5 py-0.5 bg-[#831238]/10 text-[#831238] text-xs font-bold font-sans rounded">
                       <User className="w-3 h-3 text-[#831238]" />
-                      <span>Director Innovation</span>
+                      <span> Chief Coordinator | Director Innovation</span>
                     </div>
                   </div>
                 </div>

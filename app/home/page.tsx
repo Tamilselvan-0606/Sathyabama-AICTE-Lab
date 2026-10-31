@@ -102,7 +102,7 @@ export default function HomePage() {
           <div className="lg:col-span-5 relative w-full">
             <div className="relative overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+                src="/Images/Home/Innovation_Image.jpeg?v=1793359931718"
                 alt="AICTE IDEA Lab - Student Innovation"
                 className="w-full h-[240px] sm:h-[350px] md:h-[420px] lg:h-[480px] object-cover"
               />
@@ -203,7 +203,7 @@ export default function HomePage() {
           <div className="lg:col-span-5 relative w-full">
             <div className="relative overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800"
+                src="/Images/Home/idea_to_inclubation.jpeg"
                 alt="Student Innovation and Prototyping"
                 className="w-full h-[240px] sm:h-[350px] md:h-[420px] lg:h-[480px] object-cover"
               />
