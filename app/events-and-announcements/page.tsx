@@ -13,6 +13,31 @@ const EVENTS_ANNOUNCEMENTS = [
     description:
       'A dedicated industry outreach workshop was organised to showcase the capabilities and facilities available at the AICTE IDEA LAB . Representatives from various industries were introduced to advanced digital fabrication technologies.',
   },
+  {
+    title: 'Skill Development Program on Advanced Fabrication Technologies 7-12 September 2026',
+    description:
+      'Conducted a 6-day skill development program for external participants focusing on additive and subtractive manufacturing, 3D printing, and laser cutting at the Sathyabama AICTE IDEA Lab, Sathyabama Institute of Science and Technology, Chennai.',
+  },
+  {
+    title: 'Awareness Workshop for Industry Persons',
+    description:
+      'Organized a 2-day awareness workshop by AICTE IDEA Lab coordinators for industry professionals to demonstrate advanced technologies, including additive and subtractive manufacturing, laser cutting, 3D printing, and the operation of milling machines.',
+  },
+  {
+    title: 'Innovation Ideation Workshop',
+    description:
+      'Provided hands-on experience and a fundamental understanding of microcontroller coding, firmware development, smart sensor interfacing, cloud connectivity, 3D printing, Internet of Things (IoT) technologies, and PCB fabrication.',
+  },
+  {
+    title: 'Skilling Program on Advanced Manufacturing and Engineering Tools 30 September - 14 October 2026',
+    description:
+      'Conducted a 12-day skilling program on welding, subtractive manufacturing, and additive manufacturing at the Sathyabama AICTE IDEA Lab to develop practical skills in utilizing digital fabrication tools, including CO₂ laser cutters and 3D printers.',
+  },
+  {
+    title: 'Ideation Workshop on 3D Printing and IoT 26-28 October 2026',
+    description:
+      'Organized a 3-day ideation workshop for participants to learn the fundamentals of 3D printing, additive manufacturing, and the Internet of Things (IoT) at the Sathyabama AICTE IDEA Lab, Sathyabama Institute of Science and Technology, Chennai.',
+  },
 ];
 
 export default function EventsAndAnnouncementsPage() {

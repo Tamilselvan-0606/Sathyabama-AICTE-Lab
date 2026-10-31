@@ -32,10 +32,10 @@ const LEADERSHIP_FACULTY = [
     photo: '/Images/Team/Dr_Azhagarsamy_P.jpg',
   },
   {
-    name: 'Dr Mohan Kumar K',
-    role: 'Assistant Professor (Research)',
-    email: 'mohankumar.k.irc@sathyabama.ac.in',
-    photo: '/Images/Team/Dr_Mohan_Kumar_K.png',
+    name: 'Mr Bharath S',
+    role: 'Scientific Assistant',
+    email: 'bharath.s.irc@sathyabama.ac.in',
+    photo: '/Images/Team/bharath.jpeg',
   },
   {
     name: 'Mr Jayendran U',
@@ -48,32 +48,32 @@ const LEADERSHIP_FACULTY = [
 const STUDENT_AMBASSADORS = [
   {
     name: 'Mr. Sarveash S',
-    description: 'B.E., Second Year (Computer Science and Engineering CSE DS)',
+    description: 'B.E., Second Year (CSE-DS)',
     photo: '/Images/Team/Mr_Sarveash_S.jpg',
   },
   {
-    name: 'Ms. Kamaley',
-    description: 'B.E., Second Year (Computer Science and Engineering CSE DS)',
+    name: 'Ms. Kamaly',
+    description: 'B.E., Second Year (CSE-DS)',
     photo: '/Images/Team/Ms_Kamaley.jpg',
   },
   {
-    name: 'Mr. Sanjay',
-    description: 'B.E., Second Year (Computer Science and Engineering CSE AI-ML)',
+    name: 'Mr. Sanjay B L',
+    description: 'B.E., Second Year (CSE-AIML)',
     photo: '/Images/Team/Mr_Sanjay.B.L.jpg',
   },
   {
     name: 'Ms. R Harsha',
-    description: 'B.E., Second Year (Computer Science and Engineering CSE AI-ML)',
+    description: 'B.E., Second Year (CSE-AIML)',
     photo: '/Images/Team/R_Harsha.jpg',
   },
   {
     name: 'Mr. Shyam Prasath S',
-    description: 'B.E., Second Year (Computer Science and Engineering CSE AI-ML)',
+    description: 'B.E., Second Year (CSE-AIML)',
     photo: '/Images/Team/Shyam_Prasath_S.jpg',
   },
   {
     name: 'Mr. Naveenkumar S',
-    description: 'B.E., Second Year (Computer Science and Engineering CSE AI-ML)',
+    description: 'B.E., Second Year (CSE-AIML)',
     photo: '/Images/Team/Mr_Naveenkumar.jpg',
   },
   {
